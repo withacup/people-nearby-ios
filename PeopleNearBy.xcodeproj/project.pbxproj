@@ -21,6 +21,7 @@
 		2FD6B69D1DDE24A500CA4B53 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD6B69C1DDE24A500CA4B53 /* Message.swift */; };
 		2FD6B6A01DDE252C00CA4B53 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD6B69F1DDE252C00CA4B53 /* MessageCell.swift */; };
 		2FD6B6A21DDE56C000CA4B53 /* MessageTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD6B6A11DDE56C000CA4B53 /* MessageTextView.swift */; };
+		2FF547CB1DDFFAAA001B5418 /* you_have_a_new_message.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 2FF547CA1DDFFAAA001B5418 /* you_have_a_new_message.m4a */; };
 		BFEDD9C30006C253CD78B66A /* Pods_PeopleNearBy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C89FAA9B0241719522CC13C4 /* Pods_PeopleNearBy.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +43,7 @@
 		2FD6B69C1DDE24A500CA4B53 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		2FD6B69F1DDE252C00CA4B53 /* MessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		2FD6B6A11DDE56C000CA4B53 /* MessageTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTextView.swift; sourceTree = "<group>"; };
+		2FF547CA1DDFFAAA001B5418 /* you_have_a_new_message.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = you_have_a_new_message.m4a; sourceTree = "<group>"; };
 		60EC5A466D0017E5FBCE8814 /* Pods-PeopleNearBy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PeopleNearBy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PeopleNearBy/Pods-PeopleNearBy.debug.xcconfig"; sourceTree = "<group>"; };
 		8AD14499A0565329B164B1E5 /* Pods-PeopleNearBy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PeopleNearBy.release.xcconfig"; path = "Pods/Target Support Files/Pods-PeopleNearBy/Pods-PeopleNearBy.release.xcconfig"; sourceTree = "<group>"; };
 		C89FAA9B0241719522CC13C4 /* Pods_PeopleNearBy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PeopleNearBy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,6 +118,7 @@
 				2FC627711DD7EEDC008D7113 /* Main.storyboard */,
 				2FC627771DD7EEDC008D7113 /* Assets.xcassets */,
 				2FC627791DD7EEDC008D7113 /* LaunchScreen.storyboard */,
+				2FF547CA1DDFFAAA001B5418 /* you_have_a_new_message.m4a */,
 				2FC6277C1DD7EEDC008D7113 /* Info.plist */,
 				2FC627741DD7EEDC008D7113 /* PeopleNearBy.xcdatamodeld */,
 			);
@@ -236,6 +239,7 @@
 				2FC6277B1DD7EEDC008D7113 /* LaunchScreen.storyboard in Resources */,
 				2FC627781DD7EEDC008D7113 /* Assets.xcassets in Resources */,
 				2FC627731DD7EEDC008D7113 /* Main.storyboard in Resources */,
+				2FF547CB1DDFFAAA001B5418 /* you_have_a_new_message.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

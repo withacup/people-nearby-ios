@@ -14,8 +14,8 @@ class ImVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var toUser: UITextField!
     @IBOutlet weak var statusTextView: UITextView!
-    @IBOutlet weak var inputTextView: UITextField!
-    @IBOutlet weak var displayTextField: UITextView!
+    @IBOutlet weak var inputTextView: UITextView!
+//    @IBOutlet weak var displayTextField: UITextView!
     @IBOutlet weak var sendBtn: UIButton!
 
     // diaplay the messages
@@ -93,27 +93,11 @@ class ImVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        
-        print("$debug heightforrowat \(indexPath.row)")
-        print("$debug heightforrow \(self.heightOfMessages)")
-        
-//        print("$debug length of height \(self.heightOfMessages.count)")
-//        print("$debug length of messages \(self.messages.count)")
-//        print("$debug indexpath: \(indexPath.row)")
-        
-//        guard self.heightOfMessages[indexPath.row] != 0 else {
-//            return CGFloat(heightOfMessages[indexPath.row])
-//        }
-        
         if heightOfMessages[indexPath.row] == 0.0 {
             
             if let cell = messageTable.dequeueReusableCell(withIdentifier: "MessageCell") as? MessageCell{
                 
-                
                 self.heightOfMessages[indexPath.row] = cell.configCell(message: self.messages[indexPath.row]) + 10
-                
-                
-                print("$debug cell height:\(cell.content.frame.height + 10) at \(indexPath.row)")
                 
                 return cell.content.frame.height + 10
                 
@@ -140,6 +124,10 @@ class ImVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             
         }
         
+    }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        dismissKeyboard()
     }
     
 // -------------------send button--------------------------
@@ -169,10 +157,6 @@ class ImVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 // ----------------keyboard control------------------
     func configKeyBoard() {
         
-        if let userId = userId {
-            // print("$debug userid: \(userId)")
-        }
-        
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         
         view.addGestureRecognizer(tap)  
@@ -180,8 +164,9 @@ class ImVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func dismissKeyboard() {
         view.endEditing(true)
-        
+        self.isKeyBoardOnScreen = false
     }
+    
     func keyBoardWillShow(notification: NSNotification) {
         print("$debug keyboard show")
         if !self.isKeyBoardOnScreen {
@@ -223,7 +208,7 @@ class ImVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         print(duration)
         
         bottomSpace.constant = 0
-//        print(messageTable.frame)
+        
         UIView.animate(withDuration: duration, animations: {() in
             
             self.view.layoutIfNeeded()

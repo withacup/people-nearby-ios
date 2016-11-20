@@ -42,7 +42,6 @@ extension ImVC {
             if let da = data as? [Dictionary<String, String>] {
                 
                 print("$debug \(da)")
-//                self.displayTextField.text = da[0]["message"]!
                 self.messages.append(Message(content: da[0]["message"]!, type: .from, userName: da[0]["from"]!))
                 self.heightOfMessages.append(0.0)
                 self.messageTable.reloadData()

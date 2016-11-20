@@ -39,6 +39,8 @@ class MessageCell: UITableViewCell {
     func configCell(message: Message) -> CGFloat {
         content.text = message.content // first
         
+        //http://stackoverflow.com/questions/24141610/cgsize-sizewithattributes-in-swift
+        
         let myString: NSString = content.text as NSString
         
         var size: CGSize = myString.size(attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 18)])
@@ -47,20 +49,15 @@ class MessageCell: UITableViewCell {
         
         cellType = message.type
         
+        // dynamic bubbles (spend fvcking 10 hours debugging this stupid textview)
         if cellType == .from {
             
-            
             if size.width > 355 {
-                
                 rightSpace.constant = -70
                 size.width = 355
-                
             } else {
-                
                 rightSpace.constant = -(355 - contentWidth)
-                
             }
-            
             
             leftSpace.constant = 10
             
@@ -68,16 +65,11 @@ class MessageCell: UITableViewCell {
             
         } else {
             
-            
             if size.width > 355 {
-                
                 leftSpace.constant = 70
                 size.width = 355
-                
             } else {
-            
                 leftSpace.constant = 355 - contentWidth - 5
-                
             }
         
             rightSpace.constant = -10
@@ -94,11 +86,11 @@ class MessageCell: UITableViewCell {
         
         if cellType == .from {
             
-            fixedWidth = 355 + rightSpace.constant + 10
+            fixedWidth = 365 + rightSpace.constant
             
         } else {
             
-            fixedWidth = 355 - leftSpace.constant + 5
+            fixedWidth = 360 - leftSpace.constant
             
         }
         

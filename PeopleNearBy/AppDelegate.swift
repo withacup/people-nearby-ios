@@ -17,10 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-//        let types: UIRemoteNotificationType = [.alert, .badge, .sound]
-//        application.registerUserNotificationSettings()
-//        application.registerForRemoteNotifications(matching: types)
 
         let center = UNUserNotificationCenter.current()
         center.requestAuthorization(options: [.badge, .alert, .sound], completionHandler: {granted, error in
@@ -127,7 +123,6 @@ extension AppDelegate {
         
         print("$debug unable to register for remote notification \(error)")
         
-    }
-    
+    }    
 }
 
