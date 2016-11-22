@@ -148,6 +148,13 @@ class ImVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         self.messages.append(Message(content: self.inputTextView.text!, type: .to, userName: self.userId))
         self.heightOfMessages.append(0.0)
         
+        // coredate down here
+        let newMessage = MessageCoreData(context: context)
+        newMessage.from = self.userId
+        newMessage.to = self.toUser.text!
+        newMessage.content = self.inputTextView.text!
+        ad.saveContext()
+        
         self.messageTable.reloadData()
         
         scrollToBottom()

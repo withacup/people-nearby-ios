@@ -44,6 +44,15 @@ extension ImVC {
                 print("$debug \(da)")
                 self.messages.append(Message(content: da[0]["message"]!, type: .from, userName: da[0]["from"]!))
                 self.heightOfMessages.append(0.0)
+                
+                // core data down here
+                
+                let newMessage = MessageCoreData(context: context)
+                newMessage.from = da[0]["from"]!
+                newMessage.to = self.userId
+                newMessage.content = da[0]["message"]!
+                ad.saveContext()
+                
                 self.messageTable.reloadData()
                 
                 self.scrollToBottom()

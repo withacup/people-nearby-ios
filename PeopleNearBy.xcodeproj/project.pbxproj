@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F1A67681DE3D768008F3042 /* MessageCoredata+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1A67671DE3D768008F3042 /* MessageCoredata+extension.swift */; };
 		2F599E321DDB996F00BA2F06 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F599E311DDB996F00BA2F06 /* SignInVC.swift */; };
 		2FA03F7D1DDBCD5C0010CA30 /* IM_SERVER.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA03F7C1DDBCD5C0010CA30 /* IM_SERVER.swift */; };
 		2FC6276E1DD7EEDC008D7113 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC6276D1DD7EEDC008D7113 /* AppDelegate.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F1A67671DE3D768008F3042 /* MessageCoredata+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MessageCoredata+extension.swift"; sourceTree = "<group>"; };
 		2F599E311DDB996F00BA2F06 /* SignInVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		2FA03F7C1DDBCD5C0010CA30 /* IM_SERVER.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IM_SERVER.swift; sourceTree = "<group>"; };
 		2FC6276A1DD7EEDC008D7113 /* PeopleNearBy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PeopleNearBy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,6 +132,7 @@
 			children = (
 				2FD6B6941DDD0F5F00CA4B53 /* ImVC+observe.swift */,
 				2FD6B6961DDD223100CA4B53 /* ImVC+changeStatus.swift */,
+				2F1A67671DE3D768008F3042 /* MessageCoredata+extension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 			files = (
 				2FD6B69A1DDE17C100CA4B53 /* SocketService.swift in Sources */,
 				2FD6B6A01DDE252C00CA4B53 /* MessageCell.swift in Sources */,
+				2F1A67681DE3D768008F3042 /* MessageCoredata+extension.swift in Sources */,
 				2FC627701DD7EEDC008D7113 /* ImVC.swift in Sources */,
 				2FC627761DD7EEDC008D7113 /* PeopleNearBy.xcdatamodeld in Sources */,
 				2FD6B69D1DDE24A500CA4B53 /* Message.swift in Sources */,
@@ -433,13 +437,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = PeopleNearBy/PeopleNearBy.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = UHALF589W9;
 				INFOPLIST_FILE = PeopleNearBy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tianxiao.PeopleNearBy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -449,13 +458,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = PeopleNearBy/PeopleNearBy.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = UHALF589W9;
 				INFOPLIST_FILE = PeopleNearBy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tianxiao.PeopleNearBy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
