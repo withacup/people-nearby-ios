@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Contacts+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:Contacts+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
       location = "group:UserCoreData+CoreDataClass.swift">
    </FileRef>
    <FileRef

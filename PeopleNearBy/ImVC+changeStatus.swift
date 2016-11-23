@@ -12,16 +12,19 @@ extension ImVC {
 
     func turnOffConnectionStatus() {
         
-        self.statusTextView.text = "Connecting ..."
-        self.statusTextView.textColor = UIColor.red
+//        self.statusTextView.text = "Connecting ..."
+//        self.statusTextView.textColor = UIColor.red
+        self.status.title = "Connecting.."
         self.sendBtn.isEnabled = false
+        
         
     }
     
     func turnOnConnectionStatus() {
         
-        self.statusTextView.text = "Connected!"
-        self.statusTextView.textColor = UIColor.green
+//        self.statusTextView.text = "Connected!"
+//        self.statusTextView.textColor = UIColor.green
+        self.status.title = "Connected!"
         self.sendBtn.isEnabled = true
         
     }

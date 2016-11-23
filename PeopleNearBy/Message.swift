@@ -15,7 +15,6 @@ enum messageType {
 
 class Message {
     
-    // TODO: content, from
     private var _content:String!
     private var _type: messageType!
     private var _userName: String!

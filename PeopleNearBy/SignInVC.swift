@@ -12,10 +12,9 @@ class SignInVC: UIViewController {
 
     @IBOutlet weak var inputField: UITextField!
     
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.navigationController?.navigationBar.isOpaque = true
     }
     
     @IBAction func LoginBtnPressed(_ sender: Any) {

@@ -18,23 +18,23 @@ extension UserCoreData {
     }
 
     @NSManaged public var userId: String?
-    @NSManaged public var toMessageCoreData: NSSet?
+    @NSManaged public var toContacts: NSSet?
 
 }
 
-// MARK: Generated accessors for toMessageCoreData
+// MARK: Generated accessors for toContacts
 extension UserCoreData {
 
-    @objc(addToMessageCoreDataObject:)
-    @NSManaged public func addToToMessageCoreData(_ value: MessageCoreData)
+    @objc(addToContactsObject:)
+    @NSManaged public func addToToContacts(_ value: Contacts)
 
-    @objc(removeToMessageCoreDataObject:)
-    @NSManaged public func removeFromToMessageCoreData(_ value: MessageCoreData)
+    @objc(removeToContactsObject:)
+    @NSManaged public func removeFromToContacts(_ value: Contacts)
 
-    @objc(addToMessageCoreData:)
-    @NSManaged public func addToToMessageCoreData(_ values: NSSet)
+    @objc(addToContacts:)
+    @NSManaged public func addToToContacts(_ values: NSSet)
 
-    @objc(removeToMessageCoreData:)
-    @NSManaged public func removeFromToMessageCoreData(_ values: NSSet)
+    @objc(removeToContacts:)
+    @NSManaged public func removeFromToContacts(_ values: NSSet)
 
 }

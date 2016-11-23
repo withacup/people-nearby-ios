@@ -21,6 +21,6 @@ extension MessageCoreData {
     @NSManaged public var to: String?
     @NSManaged public var content: String?
     @NSManaged public var date: NSDate?
-    @NSManaged public var toUserCoreData: UserCoreData?
+    @NSManaged public var toContact: Contacts?
 
 }

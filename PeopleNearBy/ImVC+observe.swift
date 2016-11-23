@@ -51,7 +51,7 @@ extension ImVC {
                 newMessage.from = da[0]["from"]!
                 newMessage.to = self.userId
                 newMessage.content = da[0]["message"]!
-                ad.saveContext()
+//                ad.saveContext()
                 
                 self.messageTable.reloadData()
                 
@@ -68,8 +68,10 @@ extension ImVC {
             if let data = data as? [String] {
                 
                 print("$debug disconnected on purpose")
-                self.statusTextView.text = data[0]
-                self.statusTextView.textColor = UIColor.red
+                
+//                self.status.title = data[0]
+                
+                self.turnOffConnectionStatus()
                 
             }
         }
@@ -79,8 +81,8 @@ extension ImVC {
             if let data = data as? [String] {
                 
                 print("$debug disconnected on error")
-                self.statusTextView.text = data[0]
-                self.statusTextView.textColor = UIColor.red
+//                self.status.title = data[0]
+                self.turnOffConnectionStatus()
                 
             }
         }
