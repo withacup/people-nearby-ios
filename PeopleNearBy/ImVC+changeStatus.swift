@@ -14,7 +14,9 @@ extension ImVC {
         
 //        self.statusTextView.text = "Connecting ..."
 //        self.statusTextView.textColor = UIColor.red
-        self.status.title = "Connecting.."
+//        self.status.title = "Connecting.."
+        
+        self.statusLbl.text = "Connecting..."
         self.sendBtn.isEnabled = false
         
         
@@ -24,7 +26,9 @@ extension ImVC {
         
 //        self.statusTextView.text = "Connected!"
 //        self.statusTextView.textColor = UIColor.green
-        self.status.title = "Connected!"
+//        self.status.title = "Connected!"
+        
+        self.statusLbl.text = "Connected"
         self.sendBtn.isEnabled = true
         
     }

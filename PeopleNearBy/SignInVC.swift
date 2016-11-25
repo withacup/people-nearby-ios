@@ -21,24 +21,35 @@ class SignInVC: UIViewController {
         
         if let id = inputField.text {
             
-            performSegue(withIdentifier: "ImVC", sender: id)
+            userName = id
+//            performSegue(withIdentifier: "ImVC", sender: id)
+            performSegue(withIdentifier: "MapVC", sender: nil)
             
         } else {
             
             print("$debug you need to specify an id ")
+            
         }
 
     }
     
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "MapVC" {
+//            if let destination = segue.destination as? ImVC {
+//                if let item = sender as? String {
+//                    destination.userId = item
+//                }
+//            }
+//        }
+//    }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ImVC" {
-            if let destination = segue.destination as? ImVC {
-                if let item = sender as? String {
-                    destination.userId = item
-                }
-            }
-        }
-    }
-    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "ImVC" {
+//            if let destination = segue.destination as? ImVC {
+//                if let item = sender as? String {
+//                    destination.userId = item
+//                }
+//            }
+//        }
+//    }
 }

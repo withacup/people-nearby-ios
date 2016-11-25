@@ -10,15 +10,22 @@ import UIKit
 import MapKit
 import FirebaseDatabase
 
+let FILE_NAME = "MapVC.swift"
+
 class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var newEventBtn: UIButton!
     
     let locationManager = CLLocationManager()
     
     var hasCentered = false
     var geoFireInstance: GeoFire!
-    var geoFireRef: FIRDatabaseReference!
+    var REF_EVET: FIRDatabaseReference!
+    var singleTapRecognier: UITapGestureRecognizer!
+    
+    // [EventName:annotation]
+    var currentEventAnnos = Dictionary<String,EventAnnotation>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,13 +38,12 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
         
         attempToAuthLocation()
         
-        geoFireRef = FIRDatabase.database().reference()
-        geoFireInstance = GeoFire(firebaseRef: geoFireRef)
+//        geoFireRef = FIRDatabase.database().reference()
+//        geoFireInstance = GeoFireService.sharedInstance
         
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-
+        geoFireInstance = GeoFireService.sharedInstance.getInstance
+        REF_EVET = GeoFireService.sharedInstance.REF_EVENT
+        
     }
     
     func attempToAuthLocation() {
@@ -46,11 +52,13 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
             mapView.showsUserLocation = true
         
             // Add recognier if user has authorized using location
-            let singleTapRecognier: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleSingleTap))
+            singleTapRecognier = UITapGestureRecognizer(target: self, action: #selector(handleSingleTap))
             
-            singleTapRecognier.numberOfTapsRequired = 1
-            singleTapRecognier.numberOfTouchesRequired = 1
-            mapView.addGestureRecognizer(singleTapRecognier)
+            
+            self.singleTapRecognier.numberOfTapsRequired = 1
+            self.singleTapRecognier.numberOfTouchesRequired = 1
+            self.mapView.addGestureRecognizer(singleTapRecognier)
+            self.singleTapRecognier.isEnabled = false
             
         } else {
             
@@ -99,7 +107,7 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
                 // TODO: add a button here to contact with user
             }
             
-            print("$debug user annotation")
+            Debug.printEvent(withEventDescription: "getting user annotation", inFile: FILE_NAME)
             
             annotationView?.canShowCallout = false
             annotationView?.image = UIImage(named: "duck")
@@ -118,20 +126,33 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
                 
             }
             
-            print("$debug event annotation")
+            Debug.printEvent(withEventDescription: "getting event annotation", inFile: FILE_NAME)
             
             annotationView?.canShowCallout = true
             annotationView?.image = UIImage(named: "event")
             
+            let rightBtn = UIButton(type: UIButtonType.detailDisclosure)
+            
+            annotationView?.rightCalloutAccessoryView = rightBtn
+            annotationView?.leftCalloutAccessoryView = UIImageView(image: UIImage(named: "dog"))
+            
         }
-        
-//        let a = MKPinAnnotationView()
 
         return annotationView
-//        return a
         
     }
     
+    // user tapped on callout
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        
+        // TODO: perform segue to event detail view controller
+        
+        if let eventAnno = view.annotation as? EventAnnotation {
+            
+            performSegue(withIdentifier: "EventDetailVC", sender: eventAnno.eventInfo)
+            
+        }
+    }
     
     func handleSingleTap(gesture: UIGestureRecognizer) {
         
@@ -139,14 +160,32 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
         
         let coord = mapView.convert(touchPoint, toCoordinateFrom: mapView)
         
-//        createAnnoForEvent(forlocation: coord, withEventName: "Unique Event Name")
-        
         let location = CLLocation(latitude: coord.latitude, longitude: coord.longitude)
         
-        geoFireInstance.setLocation(location, forKey: "Test New Event", withCompletionBlock: nil)
-        
         print("$debug handling new event on location: \(coord)")
+        
+        performSegue(withIdentifier: "NewEventVC", sender: location)
     
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "NewEventVC" {
+            if let destination = segue.destination as? NewEventVC {
+                if let location = sender as? CLLocation {
+                 
+                    destination.location = location
+                    destination.holder = userName
+                    
+                }
+            }
+        } else  if segue.identifier == "EventDetailVC", let eventInfo = sender as? EventInfo {
+            
+            if let destination = segue.destination as? EventDetailVC {
+                
+                destination.configViewWithEventInfo(withEventInfo: eventInfo)
+                
+            }
+        }
     }
     
     func mapView(_ mapView: MKMapView, regionWillChangeAnimated animated: Bool) {
@@ -165,21 +204,67 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
         
             if let key = key, let location = location {
                 
-                self.createAnnoForEvent(forlocation: location.coordinate, withEventName: key)
-                
+                self.REF_EVET.child(key).observeSingleEvent(of: .value, with: { (snapshot) in
+                    
+                    if let value = snapshot.value as? Dictionary<String, String> {
+                        
+                        let singleEvent = EventInfo(eventName: value["name"]!, eventTime: value["time"]!, eventHolder: value["holder"]!, eventDesription: value["content"]!, eventImg: UIImage(named: "dog")!, eventId: key)
+                        
+                        _ = self.createAnnoForEvent(forlocation: location.coordinate, eventInfo:  singleEvent)
+                        
+//                        self.currentEventAnnos[eventAnno.title!] = eventAnno
+                        
+                    }
+                })
             }
+        })
+        
+        
+        _ = circleQuery?.observe(.keyExited, with: {(key, location) in
+            
+            if let key = key {
+                self.mapView.annotations.forEach({ (anno) in
+                    if let eventAnno  = anno as? EventAnnotation {
+                        if eventAnno.eventInfo.eventId == key {
+                            
+                            self.mapView.removeAnnotation(anno)
+                            
+                            Debug.printEvent(withEventDescription: "removing annotation with key \(key)", inFile: "MapVC")
+                            
+                        }
+                    }
+                })
+            }
+            
+            Debug.printEvent(withEventDescription: "key exited", inFile: "MapVC")
+            
         })
         
     }
     
-    func createAnnoForEvent(forlocation location: CLLocationCoordinate2D, withEventName eventName: String) {
+    func createAnnoForEvent(forlocation location: CLLocationCoordinate2D, eventInfo: EventInfo) -> EventAnnotation{
         
-        let eventAnno = EventAnnotation(coordinate: location, eventName: eventName, eventTime: "Today", eventHolder: "Tianxiao Yang", eventImg: UIImage(named: "event")!)
+        let eventAnno = EventAnnotation(coordinate: location, eventInfo: eventInfo)
         
         mapView.addAnnotation(eventAnno)
         
+        return eventAnno
     }
 
+    @IBAction func newEventBtnPressed(_ sender: UIButton) {
+        
+        if !sender.isSelected {
+            
+            sender.isSelected = true
+            self.singleTapRecognier.isEnabled = true
+            
+        } else {
+            
+            sender.isSelected = false
+            self.singleTapRecognier.isEnabled = false
+            
+        }
+    }
 }
 
 

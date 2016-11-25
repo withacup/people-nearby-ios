@@ -16,21 +16,31 @@ class EventAnnotation: NSObject, MKAnnotation {
     var eventTime: String!
     var eventHolder: String!
     var eventImg: UIImage!
+    var eventDescrition: String!
+    var eventInfo: EventInfo!
     
-    // needed by MKAnnotation protocol
+    // the title for annotation callout
     var title: String? {
         
         return eventName
-        
     }
     
-    init(coordinate: CLLocationCoordinate2D, eventName: String, eventTime: String, eventHolder: String, eventImg: UIImage) {
+    // the subtitle for annotation callout
+    var subtitle: String? {
+        
+       return eventTime
+    }
+    
+    init(coordinate: CLLocationCoordinate2D, eventInfo: EventInfo) {
+        
+        self.eventInfo = eventInfo
         
         self.coordinate = coordinate
-        self.eventName = eventName
-        self.eventTime = eventTime
-        self.eventHolder = eventHolder
-        self.eventImg = eventImg
+        self.eventName = eventInfo.eventName
+        self.eventTime = eventInfo.eventTime
+        self.eventHolder = eventInfo.eventHolder
+        self.eventImg = eventInfo.eventImg
+        self.eventDescrition = eventInfo.eventDescrition
         
     }
 }

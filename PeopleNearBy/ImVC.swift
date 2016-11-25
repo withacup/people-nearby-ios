@@ -12,10 +12,11 @@ import NotificationCenter
 
 class ImVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    @IBOutlet weak var status: UINavigationItem!
+//    @IBOutlet weak var status: UINavigationItem!
     
     @IBOutlet weak var toUser: UITextField!
 //    @IBOutlet weak var statusTextView: UITextView!s
+    @IBOutlet weak var statusLbl: UILabel!
     @IBOutlet weak var inputTextView: UITextView!
 //    @IBOutlet weak var displayTextField: UITextView!
     @IBOutlet weak var sendBtn: UIButton!
@@ -31,6 +32,7 @@ class ImVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var socketId: String!
     var userId: String!
+    var toUserId: String?
     
     let socket = SocketService.socket
     var messages: [Message] = []
@@ -38,6 +40,11 @@ class ImVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if toUserId != nil {
+            toUser.text = toUserId
+        }
+        userId = userName
         
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white]
         self.navigationController?.navigationBar.barTintColor = self.colorWithHexString(hexString: "#343436")
@@ -165,6 +172,17 @@ class ImVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         inputTextView.text = ""
     }
+    
+// --------------------back button pressed-------------------
+    
+    @IBAction func backBtnPressed(_ sender: UIButton) {
+        
+        self.dismiss(animated: true, completion: nil)
+        
+    }
+    
+    
+    
 // ----------------keyboard control------------------
     func configKeyBoard() {
         
@@ -225,7 +243,6 @@ class ImVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             self.view.layoutIfNeeded()
             
         })
-        
     }
     
     // convert hex string to UIColor
