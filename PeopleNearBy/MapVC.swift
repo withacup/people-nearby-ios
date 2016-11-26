@@ -45,7 +45,9 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         newEventBtn.isSelected = false
-        singleTapRecognier.isEnabled = false
+        if singleTapRecognier != nil {
+            singleTapRecognier.isEnabled = false
+        }
     }
     
     func attempToAuthLocation() {

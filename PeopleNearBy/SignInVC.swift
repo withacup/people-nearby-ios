@@ -63,6 +63,10 @@ class SignInVC: UIViewController {
             return
         }
         
+        if MessageCenter.sharedMessageCenter.isHandlerAdded == false {
+            MessageCenter.sharedMessageCenter.addNotificationHandlers()
+        }
+        
         FirebaseAuthService.sharedFIRAuthInstance.signInWith(email: email, password: password)
     }
 }

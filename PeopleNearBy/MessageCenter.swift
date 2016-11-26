@@ -19,6 +19,7 @@ class MessageCenter {
     private var _socketId: String!
     private var _userId: String!
     private var _isConnected: Bool = false
+    private var _isHandlerAdded: Bool = true
     
     private init(){
     
@@ -30,13 +31,19 @@ class MessageCenter {
         // on server. In that case, I can easily find out if an application is currently connecting to
         // server, and I can choose to wether or not send a notification through APNs to the target user.
         
+        self.configureNotificationHandlers()
+        
+        self.configureHandlers(socket: _socket)
+    }
+    
+    private func configureNotificationHandlers() {
+        
         NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: .UIApplicationWillEnterForeground, object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(willEnterBackground), name: .UIApplicationDidEnterBackground, object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(willTerminate), name: .UIApplicationWillTerminate, object: nil)
-        
-        self.configureHandlers(socket: _socket)
+
     }
     
     private func configureHandlers(socket: SocketIOClient) {
@@ -177,6 +184,10 @@ class MessageCenter {
         return _isConnected
     }
     
+    public var isHandlerAdded: Bool {
+        return _isHandlerAdded
+    }
+    
     public func connect() {
         
         guard self._userId != nil else {
@@ -214,9 +225,14 @@ class MessageCenter {
     }
     
     public func clearAllMessages() {
-        
+        self._isHandlerAdded = false
         self._contacts.removeAll()
         
+    }
+    
+    public func addNotificationHandlers() {
+        self._isHandlerAdded = true
+        self.configureNotificationHandlers()
     }
     
     public func removeNotificationHandlers() {
