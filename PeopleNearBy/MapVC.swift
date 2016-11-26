@@ -38,12 +38,14 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
         
         attempToAuthLocation()
         
-//        geoFireRef = FIRDatabase.database().reference()
-//        geoFireInstance = GeoFireService.sharedInstance
-        
         geoFireInstance = GeoFireService.sharedInstance.getInstance
         REF_EVET = GeoFireService.sharedInstance.REF_EVENT
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        newEventBtn.isSelected = false
+        singleTapRecognier.isEnabled = false
     }
     
     func attempToAuthLocation() {
@@ -174,7 +176,6 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
                 if let location = sender as? CLLocation {
                  
                     destination.location = location
-                    destination.holder = userName
                     
                 }
             }
@@ -212,13 +213,10 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
                         
                         _ = self.createAnnoForEvent(forlocation: location.coordinate, eventInfo:  singleEvent)
                         
-//                        self.currentEventAnnos[eventAnno.title!] = eventAnno
-                        
                     }
                 })
             }
         })
-        
         
         _ = circleQuery?.observe(.keyExited, with: {(key, location) in
             
@@ -239,7 +237,6 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
             Debug.printEvent(withEventDescription: "key exited", inFile: "MapVC")
             
         })
-        
     }
     
     func createAnnoForEvent(forlocation location: CLLocationCoordinate2D, eventInfo: EventInfo) -> EventAnnotation{
@@ -264,6 +261,12 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
             self.singleTapRecognier.isEnabled = false
             
         }
+    }
+    
+    @IBAction func backToContact() {
+        
+        self.dismiss(animated: true, completion: nil)
+        
     }
 }
 

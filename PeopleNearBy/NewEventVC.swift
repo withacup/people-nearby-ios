@@ -28,7 +28,7 @@ class NewEventVC: UIViewController {
         
         REF_EVENT = GeoFireService.sharedInstance.REF_EVENT
         
-        holder = userName
+        holder = MessageCenter.sharedMessageCenter.getUserId
         
     }
 

@@ -9,7 +9,7 @@
 import FirebaseDatabase
 
 
-let DB_BASE = FIRDatabase.database().reference()
+private let DB_BASE = FIRDatabase.database().reference()
 
 class GeoFireService {
     

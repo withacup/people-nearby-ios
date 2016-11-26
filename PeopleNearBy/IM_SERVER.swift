@@ -15,4 +15,4 @@ let ipAddress = "http://ec2-52-41-103-175.us-west-2.compute.amazonaws.com"
 
 var currentDeviceToken = ""
 
-var userName: String!
+//var userName: String!

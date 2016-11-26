@@ -39,8 +39,7 @@ class EventDetailVC: UIViewController {
         REF_LOCATION = GeoFireService.sharedInstance.REF_LOCATION
         
         // If current user is not event holder, disable delete button
-        if userName != eventHolder.text! {
-            
+        if MessageCenter.sharedMessageCenter.getUserId != eventHolder.text! {
             deleteBtn.isHidden = true
             deleteBtn.isEnabled = false
             

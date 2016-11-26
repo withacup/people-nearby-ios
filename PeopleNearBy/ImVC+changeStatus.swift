@@ -12,10 +12,6 @@ extension ImVC {
 
     func turnOffConnectionStatus() {
         
-//        self.statusTextView.text = "Connecting ..."
-//        self.statusTextView.textColor = UIColor.red
-//        self.status.title = "Connecting.."
-        
         self.statusLbl.text = "Connecting..."
         self.sendBtn.isEnabled = false
         
@@ -24,25 +20,29 @@ extension ImVC {
     
     func turnOnConnectionStatus() {
         
-//        self.statusTextView.text = "Connected!"
-//        self.statusTextView.textColor = UIColor.green
-//        self.status.title = "Connected!"
-        
         self.statusLbl.text = "Connected"
         self.sendBtn.isEnabled = true
         
     }
-    
-    func willEnterForeground() {
-        turnOffConnectionStatus()
-        socket.connect()
-    }
-    
-    func willEnterBackground() {
-        socket.disconnect()
-    }
-    
-    func willTerminate() {
-        socket.disconnect()
-    }
 }
+    
+    // moved to MessageCenter.swift
+    
+//    func willEnterForeground() {
+//        turnOffConnectionStatus()
+//        socket.connect()
+//    }
+//    
+//    func willEnterBackground() {
+//        if socket.status != .disconnected {
+//            socket.removeAllHandlers()
+//            socket.disconnect()
+//        }
+//    }
+//    
+//    func willTerminate() {
+//        if socket.status != .disconnected {
+//            socket.removeAllHandlers()
+//            socket.disconnect()
+//        }
+//    }

@@ -8,28 +8,44 @@
 
 import Foundation
 
+private let debugMode = true
+
 class Debug {
     
     static func printBug(withFileLocation fileName: String, error: Error, withOperation operation: String) {
         
-        print("$debug Error with file: \(fileName) error: \(error) when: \(operation)")
+        if debugMode {
+            
+            print("$🐞 Error with file: \(fileName) error: \(error) when: \(operation)")
+            
+        }
     }
     
     static func printBug(withDescription description: String) {
         
-        print("$debug Error with description: \(description)")
+        if debugMode {
+            
+            print("$🐞 Error with description: \(description)")
+            
+        }
     }
     
     static func printBug(withNilValueName variableName: String, when operation: String) {
         
-        print("$debug Found nil with value: \(variableName) when: \(operation)")
-        
+        if debugMode {
+            
+            print("$🐞 Found nil with value: \(variableName) when: \(operation)")
+            
+        }
     }
     
     static func printEvent(withEventDescription event: String, inFile fileName: String) {
         
-        print("$debug \(event) in \(fileName)")
-        
+        if debugMode {
+            
+            print("$⏰ \(event) in \(fileName)")
+            
+        }
     }
     
 }

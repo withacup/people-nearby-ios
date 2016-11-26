@@ -21,10 +21,18 @@
 		2F599E321DDB996F00BA2F06 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F599E311DDB996F00BA2F06 /* SignInVC.swift */; };
 		2F708F151DE7C08400957059 /* EventDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F708F141DE7C08400957059 /* EventDetailVC.swift */; };
 		2F708F171DE7C61400957059 /* EventInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F708F161DE7C61400957059 /* EventInfo.swift */; };
+		2F7970601DE9E31000238CF4 /* FirebaseAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F79705F1DE9E31000238CF4 /* FirebaseAuthService.swift */; };
+		2F7970621DE9E88900238CF4 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7970611DE9E88900238CF4 /* UserProfile.swift */; };
+		2F7970641DE9F21000238CF4 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7970631DE9F21000238CF4 /* SignUpVC.swift */; };
 		2F82CF031DE531CE0006B8BE /* UserAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F82CF021DE531CE0006B8BE /* UserAnnotation.swift */; };
 		2F82CF051DE531DA0006B8BE /* EventAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F82CF041DE531DA0006B8BE /* EventAnnotation.swift */; };
 		2F9870411DE8BA8700861646 /* Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9870401DE8BA8700861646 /* Debug.swift */; };
+		2F9870431DE8C87100861646 /* ContactsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9870421DE8C87100861646 /* ContactsVC.swift */; };
 		2FA03F7D1DDBCD5C0010CA30 /* IM_SERVER.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA03F7C1DDBCD5C0010CA30 /* IM_SERVER.swift */; };
+		2FB414E81DE8CE8400DCECDF /* MessageCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB414E71DE8CE8400DCECDF /* MessageCenter.swift */; };
+		2FB414EA1DE8CEA600DCECDF /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB414E91DE8CEA600DCECDF /* Contact.swift */; };
+		2FB414EC1DE9395E00DCECDF /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB414EB1DE9395E00DCECDF /* ContactCell.swift */; };
+		2FB414EE1DE9543000DCECDF /* NewContactVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB414ED1DE9543000DCECDF /* NewContactVC.swift */; };
 		2FC6276E1DD7EEDC008D7113 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC6276D1DD7EEDC008D7113 /* AppDelegate.swift */; };
 		2FC627701DD7EEDC008D7113 /* ImVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC6276F1DD7EEDC008D7113 /* ImVC.swift */; };
 		2FC627731DD7EEDC008D7113 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FC627711DD7EEDC008D7113 /* Main.storyboard */; };
@@ -33,7 +41,6 @@
 		2FC6277B1DD7EEDC008D7113 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FC627791DD7EEDC008D7113 /* LaunchScreen.storyboard */; };
 		2FD6B6951DDD0F5F00CA4B53 /* ImVC+observe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD6B6941DDD0F5F00CA4B53 /* ImVC+observe.swift */; };
 		2FD6B6971DDD223100CA4B53 /* ImVC+changeStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD6B6961DDD223100CA4B53 /* ImVC+changeStatus.swift */; };
-		2FD6B69A1DDE17C100CA4B53 /* SocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD6B6991DDE17C100CA4B53 /* SocketService.swift */; };
 		2FD6B69D1DDE24A500CA4B53 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD6B69C1DDE24A500CA4B53 /* Message.swift */; };
 		2FD6B6A01DDE252C00CA4B53 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD6B69F1DDE252C00CA4B53 /* MessageCell.swift */; };
 		2FD6B6A21DDE56C000CA4B53 /* MessageTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD6B6A11DDE56C000CA4B53 /* MessageTextView.swift */; };
@@ -67,10 +74,18 @@
 		2F599E311DDB996F00BA2F06 /* SignInVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		2F708F141DE7C08400957059 /* EventDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailVC.swift; sourceTree = "<group>"; };
 		2F708F161DE7C61400957059 /* EventInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventInfo.swift; sourceTree = "<group>"; };
+		2F79705F1DE9E31000238CF4 /* FirebaseAuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseAuthService.swift; sourceTree = "<group>"; };
+		2F7970611DE9E88900238CF4 /* UserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		2F7970631DE9F21000238CF4 /* SignUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		2F82CF021DE531CE0006B8BE /* UserAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAnnotation.swift; sourceTree = "<group>"; };
 		2F82CF041DE531DA0006B8BE /* EventAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventAnnotation.swift; sourceTree = "<group>"; };
 		2F9870401DE8BA8700861646 /* Debug.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Debug.swift; sourceTree = "<group>"; };
+		2F9870421DE8C87100861646 /* ContactsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsVC.swift; sourceTree = "<group>"; };
 		2FA03F7C1DDBCD5C0010CA30 /* IM_SERVER.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IM_SERVER.swift; sourceTree = "<group>"; };
+		2FB414E71DE8CE8400DCECDF /* MessageCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCenter.swift; sourceTree = "<group>"; };
+		2FB414E91DE8CEA600DCECDF /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		2FB414EB1DE9395E00DCECDF /* ContactCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
+		2FB414ED1DE9543000DCECDF /* NewContactVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewContactVC.swift; sourceTree = "<group>"; };
 		2FC6276A1DD7EEDC008D7113 /* PeopleNearBy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PeopleNearBy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FC6276D1DD7EEDC008D7113 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2FC6276F1DD7EEDC008D7113 /* ImVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImVC.swift; sourceTree = "<group>"; };
@@ -82,7 +97,6 @@
 		2FC627821DD7EF0B008D7113 /* PeopleNearBy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PeopleNearBy.entitlements; sourceTree = "<group>"; };
 		2FD6B6941DDD0F5F00CA4B53 /* ImVC+observe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ImVC+observe.swift"; sourceTree = "<group>"; };
 		2FD6B6961DDD223100CA4B53 /* ImVC+changeStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ImVC+changeStatus.swift"; sourceTree = "<group>"; };
-		2FD6B6991DDE17C100CA4B53 /* SocketService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketService.swift; sourceTree = "<group>"; };
 		2FD6B69C1DDE24A500CA4B53 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		2FD6B69F1DDE252C00CA4B53 /* MessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		2FD6B6A11DDE56C000CA4B53 /* MessageTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTextView.swift; sourceTree = "<group>"; };
@@ -161,11 +175,14 @@
 		2F599E301DDB995500BA2F06 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				2FC6276F1DD7EEDC008D7113 /* ImVC.swift */,
 				2F599E311DDB996F00BA2F06 /* SignInVC.swift */,
+				2F7970631DE9F21000238CF4 /* SignUpVC.swift */,
+				2FC6276F1DD7EEDC008D7113 /* ImVC.swift */,
 				2F1A67691DE4E4D3008F3042 /* MapVC.swift */,
 				2F01FC981DE667BB002EA2E1 /* NewEventVC.swift */,
 				2F708F141DE7C08400957059 /* EventDetailVC.swift */,
+				2F9870421DE8C87100861646 /* ContactsVC.swift */,
+				2FB414ED1DE9543000DCECDF /* NewContactVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -250,8 +267,9 @@
 		2FD6B6981DDE17AA00CA4B53 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				2FD6B6991DDE17C100CA4B53 /* SocketService.swift */,
+				2FB414E71DE8CE8400DCECDF /* MessageCenter.swift */,
 				2F01FC9A1DE67480002EA2E1 /* GeoFireService.swift */,
+				2F79705F1DE9E31000238CF4 /* FirebaseAuthService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -263,6 +281,8 @@
 				2F82CF021DE531CE0006B8BE /* UserAnnotation.swift */,
 				2F82CF041DE531DA0006B8BE /* EventAnnotation.swift */,
 				2F708F161DE7C61400957059 /* EventInfo.swift */,
+				2FB414E91DE8CEA600DCECDF /* Contact.swift */,
+				2F7970611DE9E88900238CF4 /* UserProfile.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -273,6 +293,7 @@
 				2FD6B69F1DDE252C00CA4B53 /* MessageCell.swift */,
 				2FD6B6A11DDE56C000CA4B53 /* MessageTextView.swift */,
 				2F01FC961DE664C0002EA2E1 /* translucentButton.swift */,
+				2FB414EB1DE9395E00DCECDF /* ContactCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -417,16 +438,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2FD6B69A1DDE17C100CA4B53 /* SocketService.swift in Sources */,
 				2F01FC9B1DE67480002EA2E1 /* GeoFireService.swift in Sources */,
+				2F9870431DE8C87100861646 /* ContactsVC.swift in Sources */,
 				2FD6B6A01DDE252C00CA4B53 /* MessageCell.swift in Sources */,
 				2F1A67681DE3D768008F3042 /* MessageCoredata+extension.swift in Sources */,
 				2F01FC901DE6284E002EA2E1 /* GFQuery.m in Sources */,
 				2FC627701DD7EEDC008D7113 /* ImVC.swift in Sources */,
 				2F01FC8D1DE6284E002EA2E1 /* GFBase32Utils.m in Sources */,
+				2FB414EA1DE8CEA600DCECDF /* Contact.swift in Sources */,
 				2FC627761DD7EEDC008D7113 /* PeopleNearBy.xcdatamodeld in Sources */,
 				2F01FC8C1DE6284E002EA2E1 /* GeoFire.m in Sources */,
 				2F01FC971DE664C0002EA2E1 /* translucentButton.swift in Sources */,
+				2FB414EC1DE9395E00DCECDF /* ContactCell.swift in Sources */,
 				2FD6B69D1DDE24A500CA4B53 /* Message.swift in Sources */,
 				2F1A676A1DE4E4D3008F3042 /* MapVC.swift in Sources */,
 				2F599E321DDB996F00BA2F06 /* SignInVC.swift in Sources */,
@@ -435,11 +458,16 @@
 				2F82CF051DE531DA0006B8BE /* EventAnnotation.swift in Sources */,
 				2FA03F7D1DDBCD5C0010CA30 /* IM_SERVER.swift in Sources */,
 				2FD6B6951DDD0F5F00CA4B53 /* ImVC+observe.swift in Sources */,
+				2F7970601DE9E31000238CF4 /* FirebaseAuthService.swift in Sources */,
 				2FD6B6A21DDE56C000CA4B53 /* MessageTextView.swift in Sources */,
 				2F9870411DE8BA8700861646 /* Debug.swift in Sources */,
+				2FB414EE1DE9543000DCECDF /* NewContactVC.swift in Sources */,
 				2FD6B6971DDD223100CA4B53 /* ImVC+changeStatus.swift in Sources */,
+				2F7970641DE9F21000238CF4 /* SignUpVC.swift in Sources */,
 				2F01FC991DE667BB002EA2E1 /* NewEventVC.swift in Sources */,
 				2F01FC8F1DE6284E002EA2E1 /* GFGeoHashQuery.m in Sources */,
+				2FB414E81DE8CE8400DCECDF /* MessageCenter.swift in Sources */,
+				2F7970621DE9E88900238CF4 /* UserProfile.swift in Sources */,
 				2FC6276E1DD7EEDC008D7113 /* AppDelegate.swift in Sources */,
 				2F82CF031DE531CE0006B8BE /* UserAnnotation.swift in Sources */,
 				2F708F171DE7C61400957059 /* EventInfo.swift in Sources */,

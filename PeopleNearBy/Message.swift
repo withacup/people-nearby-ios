@@ -17,6 +17,8 @@ class Message {
     
     private var _content:String!
     private var _type: messageType!
+    
+    // _userName variable represents the sender's name that sent the this message to current user
     private var _userName: String!
     
     init(content:String, type: messageType, userName: String) {
