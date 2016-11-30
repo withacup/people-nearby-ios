@@ -23,7 +23,7 @@ class NewEventVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        navigationController?.setNavigationBarHidden(true, animated: false)
         geoFireInstance = GeoFireService.sharedInstance.getInstance
         
         REF_EVENT = GeoFireService.sharedInstance.REF_EVENT
@@ -34,7 +34,8 @@ class NewEventVC: UIViewController {
 
     @IBAction func backBtnPressed(_ sender: Any) {
         
-        self.dismiss(animated: true, completion: nil)
+//        self.dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
         
     }
     

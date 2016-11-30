@@ -29,7 +29,7 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        navigationController?.setNavigationBarHidden(true, animated: false)
         // geature recognizer 
         // https://github.com/azavea/ios-draggable-annotations-demo/blob/master/FinalCustomDraggableAnnotationDemo/FinalCustomDraggableAnnotationDemo/AZViewController.m
         
@@ -267,7 +267,8 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     @IBAction func backToContact() {
         
-        self.dismiss(animated: true, completion: nil)
+//        self.dismiss(animated: true, completion: nil)
+        _ = navigationController?.popViewController(animated: true)
         
     }
 }

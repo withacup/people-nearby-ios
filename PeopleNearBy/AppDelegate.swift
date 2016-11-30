@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 import UserNotifications
 import FirebaseCore
+import SwiftKeychainWrapper
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -31,6 +32,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FIRApp.configure()
         
+//        self.window = UIWindow(frame: UIScreen.main.bounds)
+//        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        
+//        var initiateVC: UIViewController!
+        
+        if let useremail = KeychainWrapper.standard.string(forKey: KEY_USER_EMAIL), let password = KeychainWrapper.standard.string(forKey: KEY_PASSWORD) {
+            
+            FirebaseAuthService.sharedFIRAuthInstance.signInWith(email: useremail, password: password)
+            
+//            initiateVC = mainStoryboard.instantiateViewController(withIdentifier: "ContactsVC") as! ContactsVC
+            
+            let navigationVC = self.window?.rootViewController as! UINavigationController
+            let mainSB = UIStoryboard(name: "Main", bundle: nil)
+            let contactsVC = mainSB.instantiateViewController(withIdentifier: "ContactsVC") as! ContactsVC
+            
+            navigationVC.pushViewController(contactsVC, animated: false)
+        }
+//        else {
+        
+//            initiateVC = mainStoryboard.instantiateViewController(withIdentifier: "NavigationVC") as! UINavigationController
+            
+//        }
+
+//        self.window?.rootViewController = initiateVC
+//
+//        self.window?.makeKeyAndVisible()
+    
         return true
     }
 

@@ -19,14 +19,11 @@ class SignUpVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        navigationController?.setNavigationBarHidden(true, animated: false)
         self.FIRAuthService = FirebaseAuthService.sharedFIRAuthInstance
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
         view.addGestureRecognizer(tapGesture)
-        
-        
-
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -57,7 +54,7 @@ class SignUpVC: UIViewController {
     }
     
     @IBAction func backBtnPressed() {
-        self.dismiss(animated: true, completion: nil)
+        _ = navigationController?.popViewController(animated: true)
     }
     
     func onAuthSuccess(_ notificaiton: NSNotification) {
@@ -67,9 +64,6 @@ class SignUpVC: UIViewController {
             Debug.printEvent(withEventDescription: "Successfully created new user with user name: \(userProfile.userName)", inFile: "SignUpVC.swift")
             
             performSegue(withIdentifier: "SignUpVCtoContactsVC", sender: nil)
-            
-            MessageCenter.sharedMessageCenter.setUserId(userId: userProfile.userEmail)
-            MessageCenter.sharedMessageCenter.connect()
         }
     }
     

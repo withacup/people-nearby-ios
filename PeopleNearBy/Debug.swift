@@ -16,7 +16,7 @@ class Debug {
         
         if debugMode {
             
-            print("$🐞 Error with file: \(fileName) error: \(error) when: \(operation)")
+            print("$❌ Error with file: \(fileName) error: \(error) when: \(operation)")
             
         }
     }
@@ -25,7 +25,7 @@ class Debug {
         
         if debugMode {
             
-            print("$🐞 Error with description: \(description)")
+            print("$❌ Error with description: \(description)")
             
         }
     }
@@ -34,7 +34,7 @@ class Debug {
         
         if debugMode {
             
-            print("$🐞 Found nil with value: \(variableName) when: \(operation)")
+            print("$❌ Found nil with value: \(variableName) when: \(operation)")
             
         }
     }
@@ -43,7 +43,7 @@ class Debug {
         
         if debugMode {
             
-            print("$⏰ \(event) in \(fileName)")
+            print("$✅ \(event) in \(fileName)")
             
         }
     }

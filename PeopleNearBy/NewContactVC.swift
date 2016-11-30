@@ -16,14 +16,19 @@ class NewContactVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        navigationController?.setNavigationBarHidden(true, animated: false)
+        if navigationController == nil {
+            
+            Debug.printBug(withDescription: "cannot find navigation view controller in newcontactvc")
+        }
         self._messageCenter = MessageCenter.sharedMessageCenter
         
     }
 
     @IBAction func backBtnPressed(_ sender: Any) {
         
-        self.dismiss(animated: true, completion: nil)
+//        self.dismiss(animated: true, completion: nil)
+        _ = navigationController?.popViewController(animated: true)
         
     }
     
@@ -35,6 +40,7 @@ class NewContactVC: UIViewController {
         }
         
         self._messageCenter.append(newContact: self.newContactName.text!)
-        self.dismiss(animated: true, completion: nil)
+//        self.dismiss(animated: true, completion: nil)
+        _ = navigationController?.popViewController(animated: true)
     }
 }

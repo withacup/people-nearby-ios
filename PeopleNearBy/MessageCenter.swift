@@ -70,6 +70,8 @@ class MessageCenter {
         socket.on("connectionConfirmedByServer") {data, ack in
             
             Debug.printEvent(withEventDescription: "successfully confirmed userId: \(self._userId)", inFile: "MessageCenter.swift")
+            // after confirming with the server, send this notif to other task
+            NotificationCenter.default.post(name: Notification.Name("connectionConfirmed"), object: nil)
             
             self._isConnected = true
         }
@@ -189,6 +191,8 @@ class MessageCenter {
     }
     
     public func connect() {
+        
+        self._userId = FirebaseAuthService.sharedFIRAuthInstance.currentUserProfile.userEmail
         
         guard self._userId != nil else {
             Debug.printBug(withNilValueName: "_userId", when: "applicatoin is attempting to connect socket to server")

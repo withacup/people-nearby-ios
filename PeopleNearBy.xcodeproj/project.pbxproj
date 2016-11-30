@@ -18,6 +18,8 @@
 		2F01FC9B1DE67480002EA2E1 /* GeoFireService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F01FC9A1DE67480002EA2E1 /* GeoFireService.swift */; };
 		2F1A67681DE3D768008F3042 /* MessageCoredata+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1A67671DE3D768008F3042 /* MessageCoredata+extension.swift */; };
 		2F1A676A1DE4E4D3008F3042 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1A67691DE4E4D3008F3042 /* MapVC.swift */; };
+		2F30ABDA1DEE7212006A2772 /* NaviSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F30ABD91DEE7212006A2772 /* NaviSegue.swift */; };
+		2F47E6041DEE8B2200208BBD /* EventContentTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F47E6031DEE8B2200208BBD /* EventContentTextView.swift */; };
 		2F599E321DDB996F00BA2F06 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F599E311DDB996F00BA2F06 /* SignInVC.swift */; };
 		2F708F151DE7C08400957059 /* EventDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F708F141DE7C08400957059 /* EventDetailVC.swift */; };
 		2F708F171DE7C61400957059 /* EventInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F708F161DE7C61400957059 /* EventInfo.swift */; };
@@ -71,6 +73,8 @@
 		2F01FC9A1DE67480002EA2E1 /* GeoFireService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeoFireService.swift; sourceTree = "<group>"; };
 		2F1A67671DE3D768008F3042 /* MessageCoredata+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MessageCoredata+extension.swift"; sourceTree = "<group>"; };
 		2F1A67691DE4E4D3008F3042 /* MapVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
+		2F30ABD91DEE7212006A2772 /* NaviSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NaviSegue.swift; sourceTree = "<group>"; };
+		2F47E6031DEE8B2200208BBD /* EventContentTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventContentTextView.swift; sourceTree = "<group>"; };
 		2F599E311DDB996F00BA2F06 /* SignInVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		2F708F141DE7C08400957059 /* EventDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailVC.swift; sourceTree = "<group>"; };
 		2F708F161DE7C61400957059 /* EventInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventInfo.swift; sourceTree = "<group>"; };
@@ -172,6 +176,14 @@
 			path = Implementation;
 			sourceTree = "<group>";
 		};
+		2F30ABD81DEE71F7006A2772 /* Segue */ = {
+			isa = PBXGroup;
+			children = (
+				2F30ABD91DEE7212006A2772 /* NaviSegue.swift */,
+			);
+			name = Segue;
+			sourceTree = "<group>";
+		};
 		2F599E301DDB995500BA2F06 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -235,6 +247,7 @@
 		2FC6276C1DD7EEDC008D7113 /* PeopleNearBy */ = {
 			isa = PBXGroup;
 			children = (
+				2F30ABD81DEE71F7006A2772 /* Segue */,
 				2F98703F1DE8BA7200861646 /* Util */,
 				2F01FC7A1DE6284E002EA2E1 /* GeoFire */,
 				2F01FC791DE62796002EA2E1 /* Resources */,
@@ -294,6 +307,7 @@
 				2FD6B6A11DDE56C000CA4B53 /* MessageTextView.swift */,
 				2F01FC961DE664C0002EA2E1 /* translucentButton.swift */,
 				2FB414EB1DE9395E00DCECDF /* ContactCell.swift */,
+				2F47E6031DEE8B2200208BBD /* EventContentTextView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -457,6 +471,7 @@
 				2F708F151DE7C08400957059 /* EventDetailVC.swift in Sources */,
 				2F82CF051DE531DA0006B8BE /* EventAnnotation.swift in Sources */,
 				2FA03F7D1DDBCD5C0010CA30 /* IM_SERVER.swift in Sources */,
+				2F47E6041DEE8B2200208BBD /* EventContentTextView.swift in Sources */,
 				2FD6B6951DDD0F5F00CA4B53 /* ImVC+observe.swift in Sources */,
 				2F7970601DE9E31000238CF4 /* FirebaseAuthService.swift in Sources */,
 				2FD6B6A21DDE56C000CA4B53 /* MessageTextView.swift in Sources */,
@@ -470,6 +485,7 @@
 				2F7970621DE9E88900238CF4 /* UserProfile.swift in Sources */,
 				2FC6276E1DD7EEDC008D7113 /* AppDelegate.swift in Sources */,
 				2F82CF031DE531CE0006B8BE /* UserAnnotation.swift in Sources */,
+				2F30ABDA1DEE7212006A2772 /* NaviSegue.swift in Sources */,
 				2F708F171DE7C61400957059 /* EventInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

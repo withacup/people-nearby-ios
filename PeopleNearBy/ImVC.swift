@@ -35,7 +35,7 @@ class ImVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        navigationController?.setNavigationBarHidden(true, animated: false)
         self.messageTable.delegate = self
         self.messageTable.dataSource = self
         
@@ -178,7 +178,8 @@ class ImVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 // --------------------back button pressed-------------------
     @IBAction func backBtnPressed(_ sender: UIButton) {
         
-        self.dismiss(animated: true, completion: nil)
+//        self.dismiss(animated: true, completion: nil)
+        _ = navigationController?.popViewController(animated: true)
         
     }
     

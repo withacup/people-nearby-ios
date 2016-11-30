@@ -24,7 +24,7 @@ class EventDetailVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        navigationController?.setNavigationBarHidden(true, animated: false)
         eventDescription.layer.borderWidth = 0.5
         eventDescription.layer.borderColor = UIColor.black.cgColor
         eventDescription.isEditable = false
@@ -70,7 +70,8 @@ class EventDetailVC: UIViewController {
     
     @IBAction func backBtnPressed(_ sender: UIButton) {
         
-        self.dismiss(animated: true, completion: nil)
+//        self.dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
         
     }
     

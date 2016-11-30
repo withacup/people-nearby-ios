@@ -8,6 +8,7 @@
 
 import Foundation
 import FirebaseAuth
+import SwiftKeychainWrapper
 
 class FirebaseAuthService {
     
@@ -42,6 +43,11 @@ class FirebaseAuthService {
                 
                 NotificationCenter.default.post(name: NSNotification.Name("onAuthSuccess"), object: nil, userInfo: newUserProfileDict)
                 
+                // never call this method out of firebase auth service
+                MessageCenter.sharedMessageCenter.connect()
+                
+                self.setKeyChain(withUserEmail: email, password: pass)
+                
             }
         })
     }
@@ -71,6 +77,12 @@ class FirebaseAuthService {
                     let userProfileDict = ["userProfile": userProfile]
                     
                     NotificationCenter.default.post(name: NSNotification.Name("onAuthSuccess"), object: nil, userInfo: userProfileDict)
+                    
+                    // never call this method out of firebase auth service
+                    MessageCenter.sharedMessageCenter.connect()
+                    
+                    self.setKeyChain(withUserEmail: userProfile.userEmail, password: userProfile.userPass)
+                    
                 })
                 
             } else {
@@ -93,7 +105,7 @@ class FirebaseAuthService {
             MessageCenter.sharedMessageCenter.clearAllMessages()
             
             Debug.printEvent(withEventDescription: "successfully signed out with user email: \(self._currentUserProfile.userEmail)", inFile: "firebaseAuthService.swift")
-            
+            self.removeKeyChain()
         } catch {
             Debug.printBug(withFileLocation: "firebaseAuthService.swift", error: error, withOperation: "sign out failed")
             return false
@@ -104,6 +116,17 @@ class FirebaseAuthService {
     public var currentUserProfile: UserProfile {
         
         return self._currentUserProfile
+    }
+    
+    func setKeyChain(withUserEmail userEmail: String, password: String){
+        KeychainWrapper.standard.set(userEmail, forKey: KEY_USER_EMAIL)
+        KeychainWrapper.standard.set(password, forKey: KEY_PASSWORD)
+        Debug.printEvent(withEventDescription: "\(userEmail) \(password) added to the keychain", inFile: "FirebaseAuthService.swift")
+    }
+    
+    func removeKeyChain() {
+        let res = KeychainWrapper.standard.removeAllKeys()
+        Debug.printEvent(withEventDescription: "\(res) removed from keychain", inFile: "FirebaseAuthService.swift")
     }
     
 }

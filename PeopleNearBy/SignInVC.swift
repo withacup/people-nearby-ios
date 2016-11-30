@@ -16,7 +16,7 @@ class SignInVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.isOpaque = true
+        navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -28,14 +28,30 @@ class SignInVC: UIViewController {
         NotificationCenter.default.removeObserver(self)
     }
     
+    
+    @IBAction func LoginBtnPressed(_ sender: Any) {
+        
+        guard let email = userEmailTF.text, let password = userPassTF.text else {
+            errorLbl.text = "email and password cannot be empty"
+            Debug.printBug(withDescription: "email and password cannot be empty")
+            return
+        }
+        
+        if MessageCenter.sharedMessageCenter.isHandlerAdded == false {
+            MessageCenter.sharedMessageCenter.addNotificationHandlers()
+        }
+        
+        FirebaseAuthService.sharedFIRAuthInstance.signInWith(email: email, password: password)
+    }
+    
     func onAuthSuccess(_ notification: NSNotification) {
         
         if let userProfile = notification.userInfo?["userProfile"] as? UserProfile {
             
             Debug.printEvent(withEventDescription: "user login success with user name: \(userProfile.userName)", inFile: "SignInVC.swift")
             
-            MessageCenter.sharedMessageCenter.setUserId(userId: userProfile.userEmail)
-            MessageCenter.sharedMessageCenter.connect()
+//            MessageCenter.sharedMessageCenter.setUserId(userId: userProfile.userEmail)
+//            MessageCenter.sharedMessageCenter.connect()
             
             performSegue(withIdentifier: "ContactsVC", sender: nil)
             
@@ -54,24 +70,7 @@ class SignInVC: UIViewController {
         }
         
     }
-    
-    @IBAction func LoginBtnPressed(_ sender: Any) {
-        
-        guard let email = userEmailTF.text, let password = userPassTF.text else {
-            errorLbl.text = "email and password cannot be empty"
-            Debug.printBug(withDescription: "email and password cannot be empty")
-            return
-        }
-        
-        if MessageCenter.sharedMessageCenter.isHandlerAdded == false {
-            MessageCenter.sharedMessageCenter.addNotificationHandlers()
-        }
-        
-        FirebaseAuthService.sharedFIRAuthInstance.signInWith(email: email, password: password)
-    }
 }
-
-
 
 
 

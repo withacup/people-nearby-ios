@@ -225,38 +225,6 @@
             endingLineNumber = "180"
             landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PeopleNearBy.MapVC.prepare (for : __ObjC.UIStoryboardSegue, sender : Swift.Optional&lt;Any&gt;) -&gt; ()"
-                  moduleName = "PeopleNearBy"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yang/Dropbox/computer-science/810/PeopleNearBy/PeopleNearBy/MapVC.swift"
-                  timestampString = "501891153.122288"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "180"
-                  endingLineNumber = "180"
-                  offsetFromSymbolStart = "994">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PeopleNearBy.MapVC.prepare (for : __ObjC.UIStoryboardSegue, sender : Swift.Optional&lt;Any&gt;) -&gt; ()"
-                  moduleName = "PeopleNearBy"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yang/Dropbox/computer-science/810/PeopleNearBy/PeopleNearBy/MapVC.swift"
-                  timestampString = "501891153.123577"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "180"
-                  endingLineNumber = "180"
-                  offsetFromSymbolStart = "999">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -273,6 +241,38 @@
             endingLineNumber = "177"
             landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PeopleNearBy.MapVC.prepare (for : __ObjC.UIStoryboardSegue, sender : Swift.Optional&lt;Any&gt;) -&gt; ()"
+                  moduleName = "PeopleNearBy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yang/Dropbox/computer-science/810/PeopleNearBy/PeopleNearBy/MapVC.swift"
+                  timestampString = "502163469.649236"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "177"
+                  endingLineNumber = "177"
+                  offsetFromSymbolStart = "341">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PeopleNearBy.MapVC.prepare (for : __ObjC.UIStoryboardSegue, sender : Swift.Optional&lt;Any&gt;) -&gt; ()"
+                  moduleName = "PeopleNearBy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yang/Dropbox/computer-science/810/PeopleNearBy/PeopleNearBy/MapVC.swift"
+                  timestampString = "502163469.650568"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "177"
+                  endingLineNumber = "177"
+                  offsetFromSymbolStart = "496">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -289,6 +289,38 @@
             endingLineNumber = "178"
             landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PeopleNearBy.MapVC.prepare (for : __ObjC.UIStoryboardSegue, sender : Swift.Optional&lt;Any&gt;) -&gt; ()"
+                  moduleName = "PeopleNearBy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yang/Dropbox/computer-science/810/PeopleNearBy/PeopleNearBy/MapVC.swift"
+                  timestampString = "502163469.653659"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "178"
+                  endingLineNumber = "178"
+                  offsetFromSymbolStart = "522">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PeopleNearBy.MapVC.prepare (for : __ObjC.UIStoryboardSegue, sender : Swift.Optional&lt;Any&gt;) -&gt; ()"
+                  moduleName = "PeopleNearBy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yang/Dropbox/computer-science/810/PeopleNearBy/PeopleNearBy/MapVC.swift"
+                  timestampString = "502163469.654985"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "178"
+                  endingLineNumber = "178"
+                  offsetFromSymbolStart = "878">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -305,6 +337,38 @@
             endingLineNumber = "184"
             landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PeopleNearBy.MapVC.prepare (for : __ObjC.UIStoryboardSegue, sender : Swift.Optional&lt;Any&gt;) -&gt; ()"
+                  moduleName = "PeopleNearBy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yang/Dropbox/computer-science/810/PeopleNearBy/PeopleNearBy/MapVC.swift"
+                  timestampString = "502163469.658037"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "184"
+                  endingLineNumber = "184"
+                  offsetFromSymbolStart = "994">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PeopleNearBy.MapVC.prepare (for : __ObjC.UIStoryboardSegue, sender : Swift.Optional&lt;Any&gt;) -&gt; ()"
+                  moduleName = "PeopleNearBy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yang/Dropbox/computer-science/810/PeopleNearBy/PeopleNearBy/MapVC.swift"
+                  timestampString = "502163469.65946"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "184"
+                  endingLineNumber = "184"
+                  offsetFromSymbolStart = "999">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -321,6 +385,38 @@
             endingLineNumber = "186"
             landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PeopleNearBy.MapVC.prepare (for : __ObjC.UIStoryboardSegue, sender : Swift.Optional&lt;Any&gt;) -&gt; ()"
+                  moduleName = "PeopleNearBy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yang/Dropbox/computer-science/810/PeopleNearBy/PeopleNearBy/MapVC.swift"
+                  timestampString = "502163469.662455"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "186"
+                  endingLineNumber = "186"
+                  offsetFromSymbolStart = "1691">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PeopleNearBy.MapVC.prepare (for : __ObjC.UIStoryboardSegue, sender : Swift.Optional&lt;Any&gt;) -&gt; ()"
+                  moduleName = "PeopleNearBy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yang/Dropbox/computer-science/810/PeopleNearBy/PeopleNearBy/MapVC.swift"
+                  timestampString = "502163469.663948"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "186"
+                  endingLineNumber = "186"
+                  offsetFromSymbolStart = "1853">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -346,11 +442,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PeopleNearBy/MessageCenter.swift"
-            timestampString = "501892202.238098"
+            timestampString = "502170808.621978"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "191"
-            endingLineNumber = "191"
+            startingLineNumber = "194"
+            endingLineNumber = "194"
             landmarkName = "connect()"
             landmarkType = "7">
          </BreakpointContent>
@@ -362,11 +458,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PeopleNearBy/MessageCenter.swift"
-            timestampString = "501892202.238098"
+            timestampString = "502170808.621978"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "193"
-            endingLineNumber = "193"
+            startingLineNumber = "197"
+            endingLineNumber = "197"
             landmarkName = "connect()"
             landmarkType = "7">
          </BreakpointContent>
@@ -378,11 +474,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PeopleNearBy/MessageCenter.swift"
-            timestampString = "501892202.238098"
+            timestampString = "502170808.621978"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "198"
-            endingLineNumber = "198"
+            startingLineNumber = "202"
+            endingLineNumber = "202"
             landmarkName = "connect()"
             landmarkType = "7">
          </BreakpointContent>
@@ -394,43 +490,43 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PeopleNearBy/MessageCenter.swift"
-            timestampString = "501892202.238098"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "247"
-            endingLineNumber = "247"
-            landmarkName = "willEnterForeground()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PeopleNearBy/MessageCenter.swift"
-            timestampString = "501892202.238098"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "249"
-            endingLineNumber = "249"
-            landmarkName = "willEnterForeground()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PeopleNearBy/MessageCenter.swift"
-            timestampString = "501892202.238098"
+            timestampString = "502170808.621978"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "251"
             endingLineNumber = "251"
+            landmarkName = "willEnterForeground()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PeopleNearBy/MessageCenter.swift"
+            timestampString = "502170808.621978"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "253"
+            endingLineNumber = "253"
+            landmarkName = "willEnterForeground()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PeopleNearBy/MessageCenter.swift"
+            timestampString = "502170808.621978"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "255"
+            endingLineNumber = "255"
             landmarkName = "willEnterForeground()"
             landmarkType = "7">
          </BreakpointContent>
@@ -474,11 +570,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PeopleNearBy/FirebaseAuthService.swift"
-            timestampString = "501882698.619495"
+            timestampString = "502171263.121826"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
             landmarkName = "createNewUserWith(userProfile:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -490,13 +586,45 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PeopleNearBy/FirebaseAuthService.swift"
-            timestampString = "501882698.619495"
+            timestampString = "502171263.121826"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
             landmarkName = "createNewUserWith(userProfile:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PeopleNearBy.FirebaseAuthService.(createNewUserWith (userProfile : PeopleNearBy.UserProfile) -&gt; ()).(closure #1)"
+                  moduleName = "PeopleNearBy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yang/Dropbox/computer-science/810/PeopleNearBy/PeopleNearBy/FirebaseAuthService.swift"
+                  timestampString = "502164041.559321"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "728">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PeopleNearBy.FirebaseAuthService.(createNewUserWith (userProfile : PeopleNearBy.UserProfile) -&gt; ()).(closure #1).(closure #1)"
+                  moduleName = "PeopleNearBy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yang/Dropbox/computer-science/810/PeopleNearBy/PeopleNearBy/FirebaseAuthService.swift"
+                  timestampString = "502164041.560923"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "62"
+                  endingLineNumber = "62"
+                  offsetFromSymbolStart = "28">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -506,11 +634,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PeopleNearBy/FirebaseAuthService.swift"
-            timestampString = "501883075.470516"
+            timestampString = "502171263.121826"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
             landmarkName = "createNewUserWith(userProfile:)"
             landmarkType = "7">
          </BreakpointContent>

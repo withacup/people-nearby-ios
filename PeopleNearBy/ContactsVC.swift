@@ -17,7 +17,7 @@ class ContactsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        navigationController?.setNavigationBarHidden(true, animated: false)
         self.messageCenter = MessageCenter.sharedMessageCenter
         
         contactsTable.delegate = self
@@ -92,8 +92,6 @@ class ContactsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             
             destination.toUserId = contactName
             
-        } else {
-            Debug.printBug(withDescription: "fail to peform segue: ContactsVCToImVC")
         }
     }
     
@@ -104,7 +102,8 @@ class ContactsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         if FirebaseAuthService.sharedFIRAuthInstance.SignOut() {
             
             MessageCenter.sharedMessageCenter.removeNotificationHandlers()
-            dismiss(animated: true, completion: nil)
+//            dismiss(animated: true, completion: nil)
+            _ = navigationController?.popToRootViewController(animated: true)
             
         }
     }
