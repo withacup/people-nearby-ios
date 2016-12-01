@@ -8,6 +8,7 @@
 
 import Foundation
 import SocketIO
+import CoreData
 
 class MessageCenter {
     
@@ -20,23 +21,25 @@ class MessageCenter {
     private var _userId: String!
     private var _isConnected: Bool = false
     private var _isHandlerAdded: Bool = true
+    private var _dataIsRetrieved: Bool = false
     
     private init(){
     
         self._socket = SocketIOClient(socketURL: URL(string: ipAddress)!, config: [.log(false), .forcePolling(true)])
+        
+        self.configureNotificationHandlers()
+        
+        
+        self.configureHandlers(socket: _socket)
+    }
+    
+    private func configureNotificationHandlers() {
         
         // Will disconenct with server when the application is going to terminate or enter background.
         // I do this because socket.io can is monitering all sockets that is connecting to the server,
         // when there is a disconnection happened, socket.io will remove the corresponding socket id
         // on server. In that case, I can easily find out if an application is currently connecting to
         // server, and I can choose to wether or not send a notification through APNs to the target user.
-        
-        self.configureNotificationHandlers()
-        
-        self.configureHandlers(socket: _socket)
-    }
-    
-    private func configureNotificationHandlers() {
         
         NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: .UIApplicationWillEnterForeground, object: nil)
         
@@ -49,7 +52,6 @@ class MessageCenter {
     private func configureHandlers(socket: SocketIOClient) {
         
         // add handlers here to deal with new messages and application bahaviors
-        
         socket.on("connect") {data, ack in
             
             self._socketId = self._socket.sid!
@@ -76,6 +78,7 @@ class MessageCenter {
             self._isConnected = true
         }
         
+        // MARK: - on newMessage from server
         socket.on("newMessage") {data, ack in
             if let da = data as? [Dictionary<String, String>] {
                 
@@ -129,6 +132,9 @@ class MessageCenter {
         
     }
     
+    // MARK: - append a new message to sepcific contact
+    /// Will append the new message into the contact with the specific contact name.
+    /// If you want to add a empty contact, use append(newContact:)
     public func append(toContact contactName: String, withNewMessage newMessage: Message) {
         
         if let contact = self._contacts[contactName] {
@@ -142,12 +148,16 @@ class MessageCenter {
             // If there is no such contact, add a new contact array to center, and notify contact view
             self._contacts[contactName] = Contact(withContactName: contactName, andMessages: [newMessage])
             
-            let newContactDict = ["newContactName":contactName]
+            let newContactDict = ["newContact":self._contacts[contactName]]
             
-            NotificationCenter.default.post(name: NSNotification.Name("newContactName"), object: nil, userInfo: newContactDict)
+            NotificationCenter.default.post(name: NSNotification.Name("newContact"), object: nil, userInfo: newContactDict)
         }
+        
+        CoredataService.insert(withContactName: contactName, newMessage: newMessage)
     }
     
+    // MARK: - append a single new empty contact, this method will only be called in newContactVC.swift
+    /// Add a empty contact into message center
     public func append(newContact contactName: String) {
         
         if let contact = self._contacts[contactName] {
@@ -158,6 +168,8 @@ class MessageCenter {
             
             self._contacts[contactName] = Contact(withContactName: contactName)
             Debug.printEvent(withEventDescription: "contact added to message center: \(contactName)", inFile: "MessageCenter.swfit")
+            
+            CoredataService.insert(emptyContact: self._contacts[contactName]!)
         }
     }
     
@@ -169,17 +181,19 @@ class MessageCenter {
             
         Debug.printBug(withNilValueName: "contact", when: "getting contact in message center with contact name: \(contactName)")
         return Contact(withContactName: "Bad contact").getMessageRec
-        
     }
     
-    public func getAllContactNames() -> [String]{
+    public func getAllContact() -> [Contact]{
         
-        var contactNames = [String]()
+        var contacts = [Contact]()
         
         self._contacts.forEach { (key, value) in
-            contactNames.append(key)
+            contacts.append(value)
         }
-        return contactNames
+        contacts.sort { (c1, c2) -> Bool in
+            c1.getDate.compare(c2.getDate as Date) == .orderedDescending
+        }
+        return contacts
     }
     
     public var isConnected: Bool {
@@ -206,7 +220,75 @@ class MessageCenter {
         
         self._isConnected = true
         
+        // if it is not the first time loading application, don't retrieve data
+        if !self._dataIsRetrieved {
+            self.atttempToRetrieveDataForCurrentUser {
+                NotificationCenter.default.post(name: NSNotification.Name("dataRetrieved"), object: nil)
+            }
+            self._dataIsRetrieved = false
+        }
+        
         self._socket.connect()
+    }
+    
+    // MARK: - retrieve data corresponding to the current user
+    // Attemp to retrieve user object from coredata. This function will deal with both user and its corresponding data including contacts and messages
+    private func atttempToRetrieveDataForCurrentUser(callback: @escaping () -> Void) {
+        
+        // if thers is a exsiting user stored in database, retrieve it and its relevant data (contacts message)
+        var userCoredata: [UserCoreData]? = nil
+
+        do {
+            let fetchRequest: NSFetchRequest<UserCoreData> = UserCoreData.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "%K == %@", "userId", self._userId)
+            try userCoredata = CoredataService.getContext().fetch(fetchRequest)
+
+        } catch {
+            Debug.printBug(withDescription: "\(error) in file MEssageCenter.swift")
+        }
+
+        // Becuase user id is unique, so it's gonna be safe to retrieve oldUser[0] as the current user
+        if let oldUser = userCoredata {
+            if oldUser.count > 0 {
+                self.attempToRetrieveData(fromUesr: self._userId)
+                CoredataService.shared.setUserMO(userMO: oldUser[0])
+            } else {
+                let newUser = UserCoreData(context: CoredataService.getContext())
+                newUser.userId = self._userId
+                CoredataService.shared.setUserMO(userMO: newUser)
+            }
+        }
+        callback()
+    }
+    
+    // MARK: - attemp to retrieve data
+    private func attempToRetrieveData(fromUesr userName: String) {
+        if let retrievedContacts = CoredataService.getContactsFromCoredata(withUserName: userName) {
+            for contact in retrievedContacts {
+                
+//                Debug.printEvent(withEventDescription: "\(contact.date)", inFile: "MessageCenter.swift")
+                
+                guard let contactId = contact.contactId else {
+                    Debug.printBug(withNilValueName: "contactId", when: "retrieving data from coredata in MessageCenter.swif")
+                    return
+                }
+                
+                Debug.printEvent(withEventDescription: "retrieving data from coredate", inFile: "MessageCenter.swif")
+                
+                _contacts[contactId] = Contact(withContactName: contactId)
+                if let retrievedMessages = CoredataService.getMessages(withContactName: contact.contactId!){
+                    for retrievedMessage in retrievedMessages {
+                        
+                        let mess = Message(content: retrievedMessage.content!, typeString: retrievedMessage.type!, userName: retrievedMessage.userName!)
+                        
+                        _contacts[contactId]?.append(withNewMessage: mess)
+                    }
+                }
+            }
+            
+            Debug.printEvent(withEventDescription: "finished loading messages from core data", inFile: "MessageCenter.swift")
+            
+        }
     }
     
     public func disconnect() {
@@ -248,7 +330,6 @@ class MessageCenter {
     
     @objc func willEnterForeground() {
         
-//        Debug.printEvent(withEventDescription: "applicatoin will enter foreground with userId: \(self._userId)", inFile: "MessageCenter")
         Debug.printEvent(withEventDescription: "will enter foreground: self.isconnected \(self.isConnected)", inFile: "MessageCenter")
         if !self.isConnected {
             

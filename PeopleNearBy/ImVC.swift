@@ -34,19 +34,18 @@ class ImVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
  // -----------------behaviors of view controller-----------------
     
     override func viewDidLoad() {
+        Debug.printEvent(withEventDescription: "view did load", inFile: "ImVC.swift")
         super.viewDidLoad()
         navigationController?.setNavigationBarHidden(true, animated: false)
         self.messageTable.delegate = self
         self.messageTable.dataSource = self
         
-        self.messageCenter = MessageCenter.sharedMessageCenter
-        self.socket = messageCenter.getSocket
-        
-        self.userId = self.messageCenter.getUserId
-        
         self.configKeyBoard()
         self.configureNotificationCenter()
         
+        self.messageCenter = MessageCenter.sharedMessageCenter
+        
+        // TODO: need to figure out how to reconnect with server after wifi reconnected
         if self.messageCenter.isConnected {
             self.turnOnConnectionStatus()
         } else {
@@ -158,6 +157,9 @@ class ImVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let newMessage = Message(content: self.inputTextView.text!, type: .to, userName: self.userId)
         
         self.messages.append(newMessage)
+        self.messages.sort { (m1, m2) -> Bool in
+            m1.date.compare(m2.date as Date) == .orderedAscending
+        }
         self.messageCenter.append(toContact: toUser.text!, withNewMessage: newMessage)
         self.heightOfMessages.append(0.0)
         

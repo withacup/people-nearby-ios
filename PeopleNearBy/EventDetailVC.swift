@@ -71,7 +71,7 @@ class EventDetailVC: UIViewController {
     @IBAction func backBtnPressed(_ sender: UIButton) {
         
 //        self.dismiss(animated: true, completion: nil)
-        navigationController?.popViewController(animated: true)
+        _ = navigationController?.popViewController(animated: true)
         
     }
     
@@ -85,7 +85,7 @@ class EventDetailVC: UIViewController {
                     
                     if (error == nil) {
                         
-                        self.dismiss(animated: true, completion: nil)
+                        self.navigationController?.popViewController(animated: true)
                         
                     } else {
                         

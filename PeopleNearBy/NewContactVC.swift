@@ -40,7 +40,6 @@ class NewContactVC: UIViewController {
         }
         
         self._messageCenter.append(newContact: self.newContactName.text!)
-//        self.dismiss(animated: true, completion: nil)
         _ = navigationController?.popViewController(animated: true)
     }
 }

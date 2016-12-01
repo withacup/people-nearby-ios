@@ -12,14 +12,14 @@ class ContactsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var contactsTable: UITableView!
     
-    var contactNames = [String]()
+    var contacts = [Contact]()
     var messageCenter: MessageCenter!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.setNavigationBarHidden(true, animated: false)
         self.messageCenter = MessageCenter.sharedMessageCenter
-        
+        self.contacts = messageCenter.getAllContact()
         contactsTable.delegate = self
         contactsTable.dataSource = self
         
@@ -30,7 +30,7 @@ class ContactsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     override func viewDidAppear(_ animated: Bool) {
         
         Debug.printEvent(withEventDescription: "view did appear", inFile: "ContactsVC.swift")
-        self.contactNames = messageCenter.getAllContactNames()
+        sortContact()
         self.contactsTable.reloadData()
         
     }
@@ -39,18 +39,40 @@ class ContactsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func configureObserver() {
         
-        NotificationCenter.default.addObserver(self, selector: #selector(self.newContact(_:)), name: NSNotification.Name("newContactName"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.newContact(_:)), name: NSNotification.Name("newContact"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.newMessage(_:)), name: NSNotification.Name("newMessage"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.whenDataRetrieved), name: NSNotification.Name("dataRetrieved"), object: nil)
         
     }
     
     func newContact(_ notification: NSNotification) {
         
-        if let newContactName = notification.userInfo?["newContactName"] as? String {
+        if let newContact = notification.userInfo?["newContact"] as? Contact {
             
-            contactNames.insert(newContactName, at: 0)
+            contacts.append(newContact)
+            sortContact()
             contactsTable.reloadData()
             
         }
+    }
+    
+    func newMessage(_ notification: NSNotification) {
+        if let mess = notification.userInfo?["newMessage"] as? Message {
+            for i in 0..<contacts.count {
+                if contacts[i].getContactName == mess.userName {
+                    contacts.insert(contacts[i], at: 0)
+                    contacts.remove(at: i + 1)
+                    break
+                }
+            }
+        }
+        contactsTable.reloadData()
+    }
+    
+    func whenDataRetrieved() {
+        
+        self.contacts = messageCenter.getAllContact()
+        contactsTable.reloadData()
     }
     
 // ----------------table view functions--------------------
@@ -60,12 +82,12 @@ class ContactsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.contactNames.count
+        return self.contacts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "ContactCell") as? ContactCell{
-            cell.configureCell(withContactName: self.contactNames[indexPath.row], andContactImg: UIImage(named: "dog")!)
+            cell.configureCell(withContactName: self.contacts[indexPath.row].getContactName, andContactImg: UIImage(named: "dog")!)
             
             return cell
         }
@@ -79,18 +101,18 @@ class ContactsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let contactName = self.contactNames[indexPath.row]
+        let contact = self.contacts[indexPath.row]
         
-        performSegue(withIdentifier: "ContactsVCToImVC", sender: contactName)
+        performSegue(withIdentifier: "ContactsVCToImVC", sender: contact)
     }
     
 // --------------------segue---------------------------
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "ContactsVCToImVC", let destination = segue.destination as? ImVC, let contactName = sender as? String {
+        if segue.identifier == "ContactsVCToImVC", let destination = segue.destination as? ImVC, let contact = sender as? Contact {
             
-            destination.toUserId = contactName
+            destination.toUserId = contact.getContactName
             
         }
     }
@@ -105,6 +127,12 @@ class ContactsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 //            dismiss(animated: true, completion: nil)
             _ = navigationController?.popToRootViewController(animated: true)
             
+        }
+    }
+    
+    private func sortContact() {
+        self.contacts.sort { (c1, c2) -> Bool in
+            c1.getDate.compare(c2.getDate as Date) == .orderedDescending
         }
     }
 }

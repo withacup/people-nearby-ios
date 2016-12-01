@@ -8,7 +8,7 @@
 
 import Foundation
 
-private let debugMode = true
+private let debugMode = false
 
 class Debug {
     

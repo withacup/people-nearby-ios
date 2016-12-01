@@ -9,6 +9,7 @@
 import Foundation
 import FirebaseAuth
 import SwiftKeychainWrapper
+import CoreData
 
 class FirebaseAuthService {
     
@@ -49,6 +50,8 @@ class FirebaseAuthService {
                 self.setKeyChain(withUserEmail: email, password: pass)
                 
             }
+            
+            
         })
     }
     

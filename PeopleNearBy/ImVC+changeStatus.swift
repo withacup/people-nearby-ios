@@ -9,7 +9,7 @@
 import UIKit
 
 extension ImVC {
-
+    /// will disable send button, cahgne status bar
     func turnOffConnectionStatus() {
         
         self.statusLbl.text = "Connecting..."
@@ -17,12 +17,14 @@ extension ImVC {
         
         
     }
-    
+    /// Will enable send button, set socket, set userId, change status bar
     func turnOnConnectionStatus() {
         
         self.statusLbl.text = "Connected"
         self.sendBtn.isEnabled = true
+        self.socket = messageCenter.getSocket
         
+        self.userId = self.messageCenter.getUserId
     }
 }
     

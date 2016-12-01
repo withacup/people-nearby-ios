@@ -40,11 +40,14 @@ extension ImVC {
         Debug.printEvent(withEventDescription: "new message receive from notification center: \(notification.userInfo)", inFile: "ImVC+observe.swift")
         
         if let newMessage = notification.userInfo?["newMessage"] as? Message {
-            
-            self.messages.append(newMessage)
-            self.heightOfMessages.append(0.0)
-            self.messageTable.reloadData()
-            
+            if newMessage.userName == self.toUser.text! {
+                self.messages.append(newMessage)
+                self.messages.sort { (m1, m2) -> Bool in
+                    m1.date.compare(m2.date as Date) == .orderedAscending
+                }
+                self.heightOfMessages.append(0.0)
+                self.messageTable.reloadData()
+            }
         }
     }
     
