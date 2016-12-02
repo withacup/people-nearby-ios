@@ -26,13 +26,6 @@ class CoredataService {
     
     static let shared = CoredataService()
     
-    /// Will update sepcific contact with latest update date and new message
-//    static func updateContactCoredata(withContactName contactName: String, newMessage: Message) {
-//        
-//        
-//        
-//    }
-    
     // MARK: - insert a new message into a specific contact
     /// This method will insert a new message object into database, and update everything with the corresponding contact object. If the contact not already exsisted in the database, this method will create the corresponding method
     static func insert(withContactName contactName: String, newMessage: Message?) {
@@ -139,6 +132,18 @@ class CoredataService {
             res = nil
         }
         return res
+    }
+    
+    // MARK: - Delete contact function 
+    /// Calling this function will delete this contact and all corresponding messages
+    static func deleteContact(withContactEmail contactEmail: String) {
+        let fetchRequest: NSFetchRequest<Contacts> = Contacts.fetchRequest()
+        let predicate = NSPredicate(format: "%K == %@", "contactId", contactEmail)
+        fetchRequest.predicate = predicate
+        
+        // Bcause there must such a contact, force try is ok
+        let contactToDelete = try! CoredataService.getContext().fetch(fetchRequest)
+        CoredataService.getContext().delete(contactToDelete[0])
     }
     
     // MARK: - Get Context function

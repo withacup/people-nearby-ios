@@ -47,6 +47,7 @@ extension ImVC {
                 }
                 self.heightOfMessages.append(0.0)
                 self.messageTable.reloadData()
+                self.scrollToBottom()
             }
         }
     }

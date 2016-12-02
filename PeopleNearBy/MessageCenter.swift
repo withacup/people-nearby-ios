@@ -200,6 +200,18 @@ class MessageCenter {
         return contacts
     }
     
+    // MARK: - Delete contact function
+    
+    /// This method will call deleteContact() in CoredataService.
+    /// It will delete data in both MessageCenter and - Coredata. ContactsVC need to update its data from message center after calling this function
+    public func deleteContact(withContactEmail contactEmail: String) {
+        Debug.printEvent(withEventDescription: "deleting contact", inFile: "MessageCenter.swift")
+        CoredataService.deleteContact(withContactEmail: contactEmail)
+        
+        self._contacts.removeValue(forKey: contactEmail)
+        
+    }
+    
     public var isConnected: Bool {
         return _isConnected
     }

@@ -17,6 +17,7 @@ class ContactsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Debug.printEvent(withEventDescription: "view did load", inFile: "ContactsVC.swift")
         navigationController?.setNavigationBarHidden(true, animated: false)
         self.messageCenter = MessageCenter.sharedMessageCenter
         self.contacts = messageCenter.getAllContact()
@@ -30,6 +31,7 @@ class ContactsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     override func viewDidAppear(_ animated: Bool) {
         
         Debug.printEvent(withEventDescription: "view did appear", inFile: "ContactsVC.swift")
+        self.contacts = messageCenter.getAllContact()
         sortContact()
         self.contactsTable.reloadData()
         
@@ -52,7 +54,8 @@ class ContactsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             contacts.append(newContact)
             sortContact()
             contactsTable.reloadData()
-            
+            let newContactCell = contactsTable.cellForRow(at: IndexPath(row: 0, section: 0)) as! ContactCell
+            newContactCell.addMark()
         }
     }
     
@@ -68,9 +71,12 @@ class ContactsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
         contactsTable.reloadData()
         
-        Debug.printEvent(withEventDescription: "Mark new contact", inFile: "ContactsVC.swift")
-        let newContactCell = contactsTable.cellForRow(at: IndexPath(row: 0, section: 0)) as! ContactCell
-        newContactCell.addMark()
+        // In case the contact has never created before, and the new mark will made in newContact()
+        if self.contacts.count > 0 {
+            Debug.printEvent(withEventDescription: "Mark new contact", inFile: "ContactsVC.swift")
+            let newContactCell = contactsTable.cellForRow(at: IndexPath(row: 0, section: 0)) as! ContactCell
+            newContactCell.addMark()
+        }
     }
     
     func whenDataRetrieved() {
@@ -105,12 +111,19 @@ class ContactsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let currentContactCell = contactsTable.cellForRow(at: indexPath) as! ContactCell
-        Debug.printEvent(withEventDescription: "removing mark at row: \(indexPath.row)", inFile: "ContactsVC.swift")
+        Debug.printEvent(withEventDescription: "select: removing mark at row: \(indexPath.row)", inFile: "ContactsVC.swift")
         currentContactCell.removeMark()
         
         let contact = self.contacts[indexPath.row]
         
         performSegue(withIdentifier: "ContactsVCToImVC", sender: contact)
+    }
+    
+    // Remove the mark when pop from ImVC, because user can receieve new message when they are in ImVC
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        let currentContactCell = contactsTable.cellForRow(at: indexPath) as! ContactCell
+        Debug.printEvent(withEventDescription: "deselect: removing mark at row: \(indexPath.row)", inFile: "ContactsVC.swift")
+        currentContactCell.removeMark()
     }
     
 // --------------------segue---------------------------

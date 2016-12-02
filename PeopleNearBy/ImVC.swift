@@ -12,6 +12,7 @@ import NotificationCenter
 
 class ImVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    // Never change toUserTF, too many things connected to it due to poor programming skill
     @IBOutlet weak var toUser: UITextField!
     @IBOutlet weak var statusLbl: UILabel!
     @IBOutlet weak var inputTextView: UITextView!
@@ -34,9 +35,9 @@ class ImVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
  // -----------------behaviors of view controller-----------------
     
     override func viewDidLoad() {
-        Debug.printEvent(withEventDescription: "view did load", inFile: "ImVC.swift")
         super.viewDidLoad()
-        navigationController?.setNavigationBarHidden(true, animated: false)
+        Debug.printEvent(withEventDescription: "view did load", inFile: "ImVC.swift")
+//        navigationController?.setNavigationBarHidden(true, animated: false)
         self.messageTable.delegate = self
         self.messageTable.dataSource = self
         
@@ -65,6 +66,7 @@ class ImVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             self.messages.forEach({ (_) in
                 self.heightOfMessages.append(0.0)
             })
+            self.scrollToBottom()
         }
     }
     
@@ -130,6 +132,8 @@ class ImVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             
             self.messageTable.scrollToRow(at: path as IndexPath, at: .bottom, animated: true)
             
+        } else {
+            Debug.printBug(withDescription: "cannot scroll to bottom because the messges array is empty", inFile: "ImVC.swift")
         }
     }
     
@@ -279,6 +283,12 @@ class ImVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         // Scan hex value
         scanner.scanHexInt32(&hexInt)
         return hexInt
+    }
+    
+    // MARK: - Delete button
+    @IBAction func deleteBtnPressed(_ sender: UIButton) {
+        MessageCenter.sharedMessageCenter.deleteContact(withContactEmail: self.toUserId!)
+        _ = navigationController?.popViewController(animated: true)
     }
 }
 

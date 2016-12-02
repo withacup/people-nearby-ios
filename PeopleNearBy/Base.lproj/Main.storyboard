@@ -780,14 +780,27 @@
                                             <action selector="backBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CFe-dE-kYK"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tJZ-eD-Bzv">
+                                        <rect key="frame" x="337" y="12" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="eKs-eO-F5q"/>
+                                            <constraint firstAttribute="height" constant="30" id="zGe-Ug-2Ya"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="delete-512"/>
+                                        <connections>
+                                            <action selector="deleteBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="V0X-bp-RUm"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.20392156862745098" green="0.20378789310000001" blue="0.21205067629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="NiT-VK-qFS" firstAttribute="centerY" secondItem="dFJ-pf-RqN" secondAttribute="centerY" id="5yl-T3-oZW"/>
                                     <constraint firstAttribute="bottom" secondItem="9K6-q1-Mu1" secondAttribute="bottom" id="FxP-iN-blU"/>
                                     <constraint firstItem="9K6-q1-Mu1" firstAttribute="top" secondItem="dFJ-pf-RqN" secondAttribute="top" id="Pfv-3n-cIu"/>
+                                    <constraint firstItem="tJZ-eD-Bzv" firstAttribute="top" secondItem="dFJ-pf-RqN" secondAttribute="top" constant="12" id="QMN-G5-V3D"/>
                                     <constraint firstItem="NiT-VK-qFS" firstAttribute="centerX" secondItem="dFJ-pf-RqN" secondAttribute="centerX" id="VIa-SE-us7"/>
                                     <constraint firstItem="9K6-q1-Mu1" firstAttribute="leading" secondItem="dFJ-pf-RqN" secondAttribute="leading" id="ghm-Qe-hj5"/>
+                                    <constraint firstAttribute="trailing" secondItem="tJZ-eD-Bzv" secondAttribute="trailing" constant="8" id="jgw-JY-2qQ"/>
                                     <constraint firstAttribute="height" constant="55" id="u0d-Hd-XIu"/>
                                 </constraints>
                             </view>
@@ -1028,6 +1041,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="delete-512" width="512" height="512"/>
         <image name="duck" width="50" height="50"/>
         <image name="map-icon" width="256" height="256"/>
     </resources>
