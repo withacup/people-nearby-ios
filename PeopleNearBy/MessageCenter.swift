@@ -169,6 +169,10 @@ class MessageCenter {
             self._contacts[contactName] = Contact(withContactName: contactName)
             Debug.printEvent(withEventDescription: "contact added to message center: \(contactName)", inFile: "MessageCenter.swfit")
             
+            let newContactDict = ["newContact":self._contacts[contactName]]
+            
+            NotificationCenter.default.post(name: NSNotification.Name("newContact"), object: nil, userInfo: newContactDict)
+            
             CoredataService.insert(emptyContact: self._contacts[contactName]!)
         }
     }

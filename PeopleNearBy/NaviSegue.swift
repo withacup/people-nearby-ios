@@ -8,9 +8,10 @@
 
 import UIKit
 
+/// Custom segue to make it possible for segue be used with navigation view
 class NaviSegue: UIStoryboardSegue {
-
     override func perform() {
+        /// When calling - performSegue, push a new - viewController on the top of view stack
         self.source.navigationController?.pushViewController(self.destination, animated: true)
     }
 }

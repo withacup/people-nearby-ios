@@ -67,6 +67,10 @@ class ContactsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             }
         }
         contactsTable.reloadData()
+        
+        Debug.printEvent(withEventDescription: "Mark new contact", inFile: "ContactsVC.swift")
+        let newContactCell = contactsTable.cellForRow(at: IndexPath(row: 0, section: 0)) as! ContactCell
+        newContactCell.addMark()
     }
     
     func whenDataRetrieved() {
@@ -100,6 +104,9 @@ class ContactsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let currentContactCell = contactsTable.cellForRow(at: indexPath) as! ContactCell
+        Debug.printEvent(withEventDescription: "removing mark at row: \(indexPath.row)", inFile: "ContactsVC.swift")
+        currentContactCell.removeMark()
         
         let contact = self.contacts[indexPath.row]
         

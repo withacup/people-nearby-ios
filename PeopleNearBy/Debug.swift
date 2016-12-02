@@ -8,8 +8,10 @@
 
 import Foundation
 
-private let debugMode = false
+/// Swich to indicate if print out the event and bug
+private let debugMode = true
 
+/// A Debug tool
 class Debug {
     
     static func printBug(withFileLocation fileName: String, error: Error, withOperation operation: String) {
@@ -26,6 +28,15 @@ class Debug {
         if debugMode {
             
             print("$❌ Error with description: \(description)")
+            
+        }
+    }
+    
+    static func printBug(withDescription description: String, inFile: String) {
+        
+        if debugMode {
+            
+            print("$❌ Error with description: \(description) in file \(inFile)")
             
         }
     }

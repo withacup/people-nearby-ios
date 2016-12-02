@@ -14,5 +14,4 @@ class InputMessageTV: UITextView {
         super.awakeFromNib()
         layer.cornerRadius = 3
     }
-
 }
