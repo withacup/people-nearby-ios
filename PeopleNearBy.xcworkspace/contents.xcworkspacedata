@@ -1,6 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
+   <Group
+      location = "container:"
+      name = "CoredataModels">
+      <FileRef
+         location = "group:PeopleNearBy/UserIcon+CoreDataClass.swift">
+      </FileRef>
+      <FileRef
+         location = "group:PeopleNearBy/UserIcon+CoreDataProperties.swift">
+      </FileRef>
+      <FileRef
+         location = "group:PeopleNearBy/UserCoreData+CoreDataClass.swift">
+      </FileRef>
+      <FileRef
+         location = "group:PeopleNearBy/UserCoreData+CoreDataProperties.swift">
+      </FileRef>
+      <FileRef
+         location = "group:PeopleNearBy/MessageCoreData+CoreDataClass.swift">
+      </FileRef>
+      <FileRef
+         location = "group:PeopleNearBy/MessageCoreData+CoreDataProperties.swift">
+      </FileRef>
+      <FileRef
+         location = "group:PeopleNearBy/Contacts+CoreDataClass.swift">
+      </FileRef>
+      <FileRef
+         location = "group:PeopleNearBy/Contacts+CoreDataProperties.swift">
+      </FileRef>
+   </Group>
    <FileRef
       location = "group:PeopleNearBy.xcodeproj">
    </FileRef>
