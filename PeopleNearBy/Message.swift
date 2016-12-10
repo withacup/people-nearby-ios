@@ -15,15 +15,31 @@ enum messageType {
 
 class Message {
     
-    // TODO: content, from
     private var _content:String!
     private var _type: messageType!
+    private var _date: NSDate!
+    
+    // _userName variable represents the sender's name that sent the this message to current user
     private var _userName: String!
     
     init(content:String, type: messageType, userName: String) {
         _content = content
         _type = type
         _userName = userName
+        _date = NSDate()
+    }
+    
+    init(content:String, typeString: String, userName: String) {
+        _content = content
+        
+        if typeString == "from" {
+            _type = .from
+        } else {
+            _type = .to
+        }
+        
+        _userName = userName
+        _date = NSDate()
     }
     
     var content:String {
@@ -53,6 +69,10 @@ class Message {
             
         }
         return _userName
+    }
+    
+    var date: NSDate {
+        return _date
     }
 }
 

@@ -10,36 +10,77 @@ import UIKit
 
 class SignInVC: UIViewController {
 
-    @IBOutlet weak var inputField: UITextField!
+    @IBOutlet weak var userEmailTF: UITextField!
+    @IBOutlet weak var userPassTF: UITextField!
+    @IBOutlet weak var errorLbl: UILabel!
     
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
+    override func viewDidLoad() {
+        super.viewDidLoad()
+//        navigationController?.setNavigationBarHidden(true, animated: false)
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        NotificationCenter.default.addObserver(self, selector: #selector(self.onAuthSuccess), name: NSNotification.Name("onAuthSuccess"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.onAuthFailed), name: NSNotification.Name("onAuthFailed"), object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     
     @IBAction func LoginBtnPressed(_ sender: Any) {
         
-        if let id = inputField.text {
-            
-            performSegue(withIdentifier: "ImVC", sender: id)
-            
-        } else {
-            
-            print("$debug you need to specify an id ")
+        guard let email = userEmailTF.text, let password = userPassTF.text else {
+            errorLbl.text = "email and password cannot be empty"
+            Debug.printBug(withDescription: "email and password cannot be empty")
+            return
         }
-
+        
+        if MessageCenter.sharedMessageCenter.isHandlerAdded == false {
+            MessageCenter.sharedMessageCenter.addNotificationHandlers()
+        }
+        
+        FirebaseAuthService.sharedFIRAuthInstance.signInWith(email: email, password: password)
     }
     
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ImVC" {
-            if let destination = segue.destination as? ImVC {
-                if let item = sender as? String {
-                    destination.userId = item
-                }
-            }
+    func onAuthSuccess(_ notification: NSNotification) {
+        
+        if let userProfile = notification.userInfo?["userProfile"] as? UserProfile {
+            
+            Debug.printEvent(withEventDescription: "user login success with user name: \(userProfile.userName)", inFile: "SignInVC.swift")
+            
+//            MessageCenter.sharedMessageCenter.setUserId(userId: userProfile.userEmail)
+//            MessageCenter.sharedMessageCenter.connect()
+            
+            performSegue(withIdentifier: "ContactsVC", sender: nil)
+            
         }
     }
     
+    func onAuthFailed(_ notification: NSNotification) {
+        
+        if let error = notification.userInfo?["error"] as? Error {
+            
+            errorLbl.text = error.localizedDescription
+            errorLbl.isHidden = false
+            
+            Debug.printBug(withFileLocation: "SignInVC.swift", error: error, withOperation: "when sing in with user email: \(userEmailTF.text!)")
+            
+        }
+        
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

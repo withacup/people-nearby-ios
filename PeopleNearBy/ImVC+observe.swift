@@ -1,5 +1,5 @@
 //
-//  ImVC+extensions.swift
+//  ImVC+observe.swift
 //  PeopleNearBy
 //
 //  Created by Tianxiao Yang on 11/16/16.
@@ -10,70 +10,51 @@ import SocketIO
 
 extension ImVC {
     
-    func configObserver() {
+//    func configObserver() {
         
-        NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: .UIApplicationWillEnterForeground, object: nil)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(willEnterBackground), name: .UIApplicationDidEnterBackground, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: .UIApplicationWillEnterForeground, object: nil)
+//        
+//        NotificationCenter.default.addObserver(self, selector: #selector(willEnterBackground), name: .UIApplicationDidEnterBackground, object: nil)
+//        
+//        NotificationCenter.default.addObserver(self, selector: #selector(willTerminate), name: .UIApplicationWillTerminate, object: nil)
+//        
+//    }
+    
+    func configureNotificationCenter() {
         
-        NotificationCenter.default.addObserver(self, selector: #selector(willTerminate), name: .UIApplicationWillTerminate, object: nil)
+        // observe when keyboard will move
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyBoardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyBoardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.newMessageReceived(_:)), name: Notification.Name("newMessage"), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.socketDisconnected), name: Notification.Name("socketDisconnected"), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.turnOnConnectionStatus), name: Notification.Name("connectionConfirmed"), object: nil)
     }
     
-    func configSocket(socket: SocketIOClient) {
+    func newMessageReceived(_ notification: NSNotification) {
         
-        socket.on("connect") {data, ack in
-            
-            self.socketId = self.socket.sid!
-            print("$debug socket connected \(self.socketId!)")
-            
-            socket.emit("verifyUser", ["socketId":self.socketId, "userId":self.userId, "deviceToken":currentDeviceToken])
-            
-        }
+        Debug.printEvent(withEventDescription: "new message receive from notification center: \(notification.userInfo)", inFile: "ImVC+observe.swift")
         
-        socket.on("connectionConfirmedByServer") {data, ack in
-            
-            self.turnOnConnectionStatus()// trun on the connection status
-            
-        }
-        
-        socket.on("newMessage") {data, ack in
-            
-            if let da = data as? [Dictionary<String, String>] {
-                
-                print("$debug \(da)")
-                self.messages.append(Message(content: da[0]["message"]!, type: .from, userName: da[0]["from"]!))
+        if let newMessage = notification.userInfo?["newMessage"] as? Message {
+            if newMessage.userName == self.toUser.text! {
+                self.messages.append(newMessage)
+                self.messages.sort { (m1, m2) -> Bool in
+                    m1.date.compare(m2.date as Date) == .orderedAscending
+                }
                 self.heightOfMessages.append(0.0)
                 self.messageTable.reloadData()
-                
                 self.scrollToBottom()
-                
-            } else {
-                
-                print("$debug convertion failed")
             }
         }
+    }
+    
+    func socketDisconnected() {
         
-        socket.on("disconnect") {data, ack in
-            
-            if let data = data as? [String] {
-                
-                print("$debug disconnected on purpose")
-                self.statusTextView.text = data[0]
-                self.statusTextView.textColor = UIColor.red
-                
-            }
-        }
+        self.turnOffConnectionStatus()
         
-        socket.on("error") {data, ack in
-            
-            if let data = data as? [String] {
-                
-                print("$debug disconnected on error")
-                self.statusTextView.text = data[0]
-                self.statusTextView.textColor = UIColor.red
-                
-            }
-        }
     }
 }

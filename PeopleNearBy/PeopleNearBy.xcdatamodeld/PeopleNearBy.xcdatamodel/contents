@@ -1,4 +1,30 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11542" systemVersion="16B2555" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Contacts" representedClassName="Contacts" syncable="YES" codeGenerationType="class">
+        <attribute name="contactId" attributeType="String" syncable="YES"/>
+        <attribute name="date" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="toMessageCoreData" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="MessageCoreData" inverseName="toContact" inverseEntity="MessageCoreData" syncable="YES"/>
+        <relationship name="toUserCoreData" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserCoreData" inverseName="toContacts" inverseEntity="UserCoreData" syncable="YES"/>
+    </entity>
+    <entity name="Images" representedClassName="Images" syncable="YES" codeGenerationType="class">
+        <attribute name="imageData" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
+        <attribute name="imageId" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="MessageCoreData" representedClassName="MessageCoreData" syncable="YES" codeGenerationType="class">
+        <attribute name="content" attributeType="String" syncable="YES"/>
+        <attribute name="date" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="toContact" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Contacts" inverseName="toMessageCoreData" inverseEntity="Contacts" syncable="YES"/>
+    </entity>
+    <entity name="UserCoreData" representedClassName="UserCoreData" syncable="YES" codeGenerationType="class">
+        <attribute name="userId" attributeType="String" syncable="YES"/>
+        <relationship name="toContacts" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Contacts" inverseName="toUserCoreData" inverseEntity="Contacts" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Contacts" positionX="126" positionY="-162" width="128" height="103"/>
+        <element name="MessageCoreData" positionX="342" positionY="-10" width="110" height="118"/>
+        <element name="UserCoreData" positionX="-54" positionY="18" width="128" height="73"/>
+        <element name="Images" positionX="135" positionY="-45" width="128" height="75"/>
+    </elements>
 </model>

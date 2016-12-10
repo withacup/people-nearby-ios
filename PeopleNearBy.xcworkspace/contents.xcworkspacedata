@@ -5,10 +5,10 @@
       location = "container:"
       name = "CoredataModels">
       <FileRef
-         location = "group:PeopleNearBy/UserIcon+CoreDataClass.swift">
+         location = "group:PeopleNearBy/Images+CoreDataClass.swift">
       </FileRef>
       <FileRef
-         location = "group:PeopleNearBy/UserIcon+CoreDataProperties.swift">
+         location = "group:PeopleNearBy/Images+CoreDataProperties.swift">
       </FileRef>
       <FileRef
          location = "group:PeopleNearBy/UserCoreData+CoreDataClass.swift">

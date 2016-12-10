@@ -10,13 +10,18 @@ import UIKit
 
 class MessageCell: UITableViewCell {
 
+    // Content of message
     @IBOutlet weak var content: UITextView!
     @IBOutlet weak var view: MessageTextView!
     
+    /// Constrain on left side of the message bubble
     var leftSpace: NSLayoutConstraint! = nil
+    /// Constrain on right side of the message bubble
     var rightSpace: NSLayoutConstraint! = nil
+    /// Indicate wether it's a incoming cell or outgoing cell
     var cellType: messageType!
     
+    /// Current bubble width
     private var currentWidth: CGFloat!
     
     override func awakeFromNib() {
