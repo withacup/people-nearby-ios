@@ -16,7 +16,6 @@ class SignInVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -50,11 +49,19 @@ class SignInVC: UIViewController {
             
             Debug.printEvent(withEventDescription: "user login success with user name: \(userProfile.userName)", inFile: "SignInVC.swift")
             
-//            MessageCenter.sharedMessageCenter.setUserId(userId: userProfile.userEmail)
-//            MessageCenter.sharedMessageCenter.connect()
-            
+            let email = userProfile.userEmail
+            if let userImage = CoredataService.attempToGetImage(withId: email) {
+                
+                FirebaseAuthService.sharedFIRAuthInstance.currentUserProfile.setUserIcon(userIcon: userImage)
+                
+            } else {
+                
+                FIRStorageService.sharedInstance.retrieveUserIcon(withId: email, completion: { (userIcon) in
+                    CoredataService.insert(withNewImage: userIcon, id: email)
+                })
+                
+            }
             performSegue(withIdentifier: "ContactsVC", sender: nil)
-            
         }
     }
     
@@ -68,7 +75,6 @@ class SignInVC: UIViewController {
             Debug.printBug(withFileLocation: "SignInVC.swift", error: error, withOperation: "when sing in with user email: \(userEmailTF.text!)")
             
         }
-        
     }
 }
 

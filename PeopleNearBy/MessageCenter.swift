@@ -30,7 +30,6 @@ class MessageCenter {
         
         self.configureNotificationHandlers()
         
-        
         self.configureHandlers(socket: _socket)
     }
     
@@ -148,18 +147,29 @@ class MessageCenter {
             
             // If there is no such contact, add a new contact array to center, and notify contact view
             
-            FIRStorageService.sharedInstance.retrieveUserIcon(withId: contactName, completion: { (userIcon) in
+            if let userIcon = CoredataService.attempToGetImage(withId: newMessage.userName) {
                 
-                Debug.printEvent(withEventDescription: "contact image has been retrieved with email \(contactName) when appending the new message into the contact with the specific contact name", inFile: self.FILE_NAME)
+                Debug.printEvent(withEventDescription: "user icon has been found in coredata", inFile: FILE_NAME)
                 
                 self._contacts[contactName] = Contact(withContactName: contactName, andMessages: [newMessage], contactImg: userIcon)
-                
                 let newContactDict = ["newContact":self._contacts[contactName]]
-                
                 NotificationCenter.default.post(name: NSNotification.Name("newContact"), object: nil, userInfo: newContactDict)
-            })
+            } else {
+                
+                FIRStorageService.sharedInstance.retrieveUserIcon(withId: contactName, completion: { (userIcon) in
+                    
+                    Debug.printEvent(withEventDescription: "contact image has been retrieved with email \(contactName) when appending the new message into the contact with the specific contact name", inFile: self.FILE_NAME)
+                    
+                    self._contacts[contactName] = Contact(withContactName: contactName, andMessages: [newMessage], contactImg: userIcon)
+                    
+                    CoredataService.insert(withNewImage: userIcon, id: contactName)
+                    
+                    let newContactDict = ["newContact":self._contacts[contactName]]
+                    
+                    NotificationCenter.default.post(name: NSNotification.Name("newContact"), object: nil, userInfo: newContactDict)
+                })
+            }
         }
-        
         CoredataService.insert(withContactName: contactName, newMessage: newMessage)
     }
     
@@ -173,9 +183,7 @@ class MessageCenter {
             
         } else {
             
-            FIRStorageService.sharedInstance.retrieveUserIcon(withId: contactName, completion: { (userIcon) in
-                
-                Debug.printEvent(withEventDescription: "contact image has been retrieved with email \(contactName) when adding an empty contact into message center", inFile: self.FILE_NAME)
+            if let userIcon = CoredataService.attempToGetImage(withId: contactName) {
                 
                 self._contacts[contactName] = Contact(withContactName: contactName, contactImg: userIcon)
                 
@@ -186,7 +194,26 @@ class MessageCenter {
                 NotificationCenter.default.post(name: NSNotification.Name("newContact"), object: nil, userInfo: newContactDict)
                 
                 CoredataService.insert(emptyContact: self._contacts[contactName]!)
-            })
+
+                
+            } else {
+                FIRStorageService.sharedInstance.retrieveUserIcon(withId: contactName, completion: { (userIcon) in
+                    
+                    CoredataService.insert(withNewImage: userIcon, id: contactName)
+                    
+                    Debug.printEvent(withEventDescription: "contact image has been retrieved with email \(contactName) when adding an empty contact into message center", inFile: self.FILE_NAME)
+                    
+                    self._contacts[contactName] = Contact(withContactName: contactName, contactImg: userIcon)
+                    
+                    Debug.printEvent(withEventDescription: "contact added to message center: \(contactName)", inFile: "MessageCenter.swfit")
+                    
+                    let newContactDict = ["newContact":self._contacts[contactName]]
+                    
+                    NotificationCenter.default.post(name: NSNotification.Name("newContact"), object: nil, userInfo: newContactDict)
+                    
+                    CoredataService.insert(emptyContact: self._contacts[contactName]!)
+                })
+            }
         }
     }
     
@@ -233,6 +260,7 @@ class MessageCenter {
         return _isHandlerAdded
     }
     
+    /// This function will only be called in GeoFIreService.swift
     public func connect() {
         
         self._userId = FirebaseAuthService.sharedFIRAuthInstance.currentUserProfile.userEmail

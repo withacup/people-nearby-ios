@@ -51,7 +51,7 @@ class FIRStorageService {
     
     // MARK: - save user icon into firebase storage
     /// This method can insert user icon into strage, it will pass the download url to completion block
-    public func saveUser(withIcon newIcon: UIImage, id: String, completion: @escaping (_ downloadURL: String) -> Void) {
+    public func saveUserIcon(withIcon newIcon: UIImage, id: String, completion: @escaping (_ downloadURL: String) -> Void) {
         
         if let imageData = UIImageJPEGRepresentation(newIcon, 1.0) {
             let metaData = FIRStorageMetadata()
@@ -64,7 +64,7 @@ class FIRStorageService {
                     Debug.printBug(withFileLocation: "FIrstorageServeice.swfit", error: error, withOperation: "uploading image with id:  \(id)")
                     
                 } else {
-                    Debug.printEvent(withEventDescription: "uploading user: \(metaData.downloadURL()?.absoluteString)", inFile: self.FILE_NAME)
+                    Debug.printEvent(withEventDescription: "uploading user: \(metadata?.downloadURL()?.absoluteString)", inFile: self.FILE_NAME)
                     
                     completion((metadata?.downloadURL()?.absoluteString)!)
                     

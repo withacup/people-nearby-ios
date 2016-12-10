@@ -25,6 +25,7 @@ class SignUpVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
 //        navigationController?.setNavigationBarHidden(true, animated: false)
         self.imagePicker = UIImagePickerController()
         imagePicker.allowsEditing = true
+        imagePicker.delegate = self
         
         self.FIRAuthService = FirebaseAuthService.sharedFIRAuthInstance
         
@@ -54,12 +55,21 @@ class SignUpVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
             return
         }
         
-        FIRStorageService.sharedInstance.saveUser(withIcon: (userImgBtn.imageView?.image)!, id: email) { imageURL in
+        self.FIRAuthService.createNewUserWith(userEmail: email, userPassword: password) {
             
-            let newUserProfile = UserProfile(withUserName: username, userPhotoUrl: URL(fileURLWithPath: imageURL) , userEmail: email, userPass: password)
-            
-            self.FIRAuthService.createNewUserWith(userProfile: newUserProfile)
-            
+            FIRStorageService.sharedInstance.saveUserIcon(withIcon: (self.userImgBtn.imageView?.image)!, id: email) { imageURL in
+                
+                let newUserProfile = UserProfile(withUserName: username, userPhotoUrl: URL(fileURLWithPath: imageURL) , userEmail: email, userPass: password, userImg: nil)
+                
+                self.FIRAuthService.changeUserProfile(userProfile: newUserProfile, completion: { (error) in
+                    if let err = error {
+                        Debug.printBug(withFileLocation: self.FILE_NAME, error: err, withOperation: "failed to change user profile")
+                    } else {
+                        Debug.printEvent(withEventDescription: "successfully changed user profile: \(email)", inFile: self.FILE_NAME)
+                        CoredataService.insert(withNewImage: (self.userImgBtn.imageView?.image)!, id: email)
+                    }
+                })
+            }
         }
     }
     

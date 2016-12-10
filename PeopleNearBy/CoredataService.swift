@@ -111,11 +111,13 @@ class CoredataService {
     }
     
     // MARK: - Retrieve image from coredata
-    /// This method will retrieve the image stored in database
-    static func getImage(withId imageId: String) -> UIImage{
+    /// This method will try to retrieve the image stored in database, if failed, it will return nil
+    static func attempToGetImage(withId imageId: String) -> UIImage?{
+        
+        Debug.printEvent(withEventDescription: "trying to retrieve image from coredata", inFile: FILE_NAME)
         
         let fetchRequest: NSFetchRequest<Images> = Images.fetchRequest()
-        let predicate = NSPredicate(format: "@K == %@", "imageId", imageId)
+        let predicate = NSPredicate(format: "%K == %@", "imageId", imageId)
         fetchRequest.predicate = predicate
         
         var images = [Images]()
@@ -125,7 +127,12 @@ class CoredataService {
         }catch {
             Debug.printBug(withNilValueName: "images", when: "retrieving image data from coredata in \(FILE_NAME)")
         }
-        return UIImage(data: images[0].imageData as! Data)!
+        if (images.count > 0) {
+            Debug.printEvent(withEventDescription: "image found with id: \(imageId)", inFile: FILE_NAME)
+            return UIImage(data: images[0].imageData as! Data)!
+        }
+        Debug.printEvent(withEventDescription: "cannot find image found with id: \(imageId)", inFile: FILE_NAME)
+        return nil
     }
     
     // MARK: - Retrieve Messages With Contact Name

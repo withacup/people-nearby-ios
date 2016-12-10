@@ -41,8 +41,8 @@
                   symbolName = "PeopleNearBy.ImVC.sendBtnPressed (Any) -&gt; ()"
                   moduleName = "PeopleNearBy"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yang/Dropbox/computer-science/810/recover/people-nearby-ios/PeopleNearBy/ImVC.swift"
-                  timestampString = "503087329.438494"
+                  urlString = "file:///Users/yang/Desktop/github810/people-nearby-ios/PeopleNearBy/ImVC.swift"
+                  timestampString = "503098322.891099"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "164"
@@ -56,8 +56,8 @@
                   symbolName = "PeopleNearBy.ImVC.(sendBtnPressed (Any) -&gt; ()).(closure #1)"
                   moduleName = "PeopleNearBy"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yang/Dropbox/computer-science/810/recover/people-nearby-ios/PeopleNearBy/ImVC.swift"
-                  timestampString = "503087329.440737"
+                  urlString = "file:///Users/yang/Desktop/github810/people-nearby-ios/PeopleNearBy/ImVC.swift"
+                  timestampString = "503098322.892271"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "165"
@@ -281,8 +281,8 @@
                   symbolName = "PeopleNearBy.MapVC.prepare (for : __ObjC.UIStoryboardSegue, sender : Swift.Optional&lt;Any&gt;) -&gt; ()"
                   moduleName = "PeopleNearBy"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yang/Dropbox/computer-science/810/recover/people-nearby-ios/PeopleNearBy/MapVC.swift"
-                  timestampString = "503087329.488407"
+                  urlString = "file:///Users/yang/Desktop/github810/people-nearby-ios/PeopleNearBy/MapVC.swift"
+                  timestampString = "503098322.927525"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "181"
@@ -296,8 +296,8 @@
                   symbolName = "PeopleNearBy.MapVC.prepare (for : __ObjC.UIStoryboardSegue, sender : Swift.Optional&lt;Any&gt;) -&gt; ()"
                   moduleName = "PeopleNearBy"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yang/Dropbox/computer-science/810/recover/people-nearby-ios/PeopleNearBy/MapVC.swift"
-                  timestampString = "503087329.489911"
+                  urlString = "file:///Users/yang/Desktop/github810/people-nearby-ios/PeopleNearBy/MapVC.swift"
+                  timestampString = "503098322.928851"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "181"
@@ -329,8 +329,8 @@
                   symbolName = "PeopleNearBy.MapVC.prepare (for : __ObjC.UIStoryboardSegue, sender : Swift.Optional&lt;Any&gt;) -&gt; ()"
                   moduleName = "PeopleNearBy"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yang/Dropbox/computer-science/810/recover/people-nearby-ios/PeopleNearBy/MapVC.swift"
-                  timestampString = "503087329.492391"
+                  urlString = "file:///Users/yang/Desktop/github810/people-nearby-ios/PeopleNearBy/MapVC.swift"
+                  timestampString = "503098322.93447"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "182"
@@ -344,8 +344,8 @@
                   symbolName = "PeopleNearBy.MapVC.prepare (for : __ObjC.UIStoryboardSegue, sender : Swift.Optional&lt;Any&gt;) -&gt; ()"
                   moduleName = "PeopleNearBy"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yang/Dropbox/computer-science/810/recover/people-nearby-ios/PeopleNearBy/MapVC.swift"
-                  timestampString = "503087329.493624"
+                  urlString = "file:///Users/yang/Desktop/github810/people-nearby-ios/PeopleNearBy/MapVC.swift"
+                  timestampString = "503098322.935955"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "182"
@@ -377,8 +377,8 @@
                   symbolName = "PeopleNearBy.MapVC.prepare (for : __ObjC.UIStoryboardSegue, sender : Swift.Optional&lt;Any&gt;) -&gt; ()"
                   moduleName = "PeopleNearBy"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yang/Dropbox/computer-science/810/recover/people-nearby-ios/PeopleNearBy/MapVC.swift"
-                  timestampString = "503087329.496038"
+                  urlString = "file:///Users/yang/Desktop/github810/people-nearby-ios/PeopleNearBy/MapVC.swift"
+                  timestampString = "503098322.939045"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "188"
@@ -392,8 +392,8 @@
                   symbolName = "PeopleNearBy.MapVC.prepare (for : __ObjC.UIStoryboardSegue, sender : Swift.Optional&lt;Any&gt;) -&gt; ()"
                   moduleName = "PeopleNearBy"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yang/Dropbox/computer-science/810/recover/people-nearby-ios/PeopleNearBy/MapVC.swift"
-                  timestampString = "503087329.497357"
+                  urlString = "file:///Users/yang/Desktop/github810/people-nearby-ios/PeopleNearBy/MapVC.swift"
+                  timestampString = "503098322.940341"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "188"
@@ -425,8 +425,8 @@
                   symbolName = "PeopleNearBy.MapVC.prepare (for : __ObjC.UIStoryboardSegue, sender : Swift.Optional&lt;Any&gt;) -&gt; ()"
                   moduleName = "PeopleNearBy"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yang/Dropbox/computer-science/810/recover/people-nearby-ios/PeopleNearBy/MapVC.swift"
-                  timestampString = "503087329.500004"
+                  urlString = "file:///Users/yang/Desktop/github810/people-nearby-ios/PeopleNearBy/MapVC.swift"
+                  timestampString = "503098322.943486"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "190"
@@ -440,8 +440,8 @@
                   symbolName = "PeopleNearBy.MapVC.prepare (for : __ObjC.UIStoryboardSegue, sender : Swift.Optional&lt;Any&gt;) -&gt; ()"
                   moduleName = "PeopleNearBy"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yang/Dropbox/computer-science/810/recover/people-nearby-ios/PeopleNearBy/MapVC.swift"
-                  timestampString = "503087329.501253"
+                  urlString = "file:///Users/yang/Desktop/github810/people-nearby-ios/PeopleNearBy/MapVC.swift"
+                  timestampString = "503098322.944775"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "190"
@@ -474,11 +474,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PeopleNearBy/MessageCenter.swift"
-            timestampString = "503087328.183465"
+            timestampString = "503097320.230757"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "237"
-            endingLineNumber = "237"
+            startingLineNumber = "265"
+            endingLineNumber = "265"
             landmarkName = "connect()"
             landmarkType = "7">
          </BreakpointContent>
@@ -490,11 +490,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PeopleNearBy/MessageCenter.swift"
-            timestampString = "503087328.183465"
+            timestampString = "503097320.230757"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "240"
-            endingLineNumber = "240"
+            startingLineNumber = "268"
+            endingLineNumber = "268"
             landmarkName = "connect()"
             landmarkType = "7">
          </BreakpointContent>
@@ -506,11 +506,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PeopleNearBy/MessageCenter.swift"
-            timestampString = "503087328.183465"
+            timestampString = "503097320.230757"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "245"
-            endingLineNumber = "245"
+            startingLineNumber = "273"
+            endingLineNumber = "273"
             landmarkName = "connect()"
             landmarkType = "7">
          </BreakpointContent>
@@ -522,11 +522,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PeopleNearBy/MessageCenter.swift"
-            timestampString = "503087328.183465"
+            timestampString = "503097320.230757"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "365"
-            endingLineNumber = "365"
+            startingLineNumber = "393"
+            endingLineNumber = "393"
             landmarkName = "willEnterForeground()"
             landmarkType = "7">
          </BreakpointContent>
@@ -538,11 +538,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PeopleNearBy/MessageCenter.swift"
-            timestampString = "503087328.183465"
+            timestampString = "503097320.230757"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "367"
-            endingLineNumber = "367"
+            startingLineNumber = "395"
+            endingLineNumber = "395"
             landmarkName = "willEnterForeground()"
             landmarkType = "7">
          </BreakpointContent>
@@ -585,86 +585,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PeopleNearBy/FirebaseAuthService.swift"
-            timestampString = "502256112.733814"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
-            landmarkName = "createNewUserWith(userProfile:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PeopleNearBy/FirebaseAuthService.swift"
-            timestampString = "502256112.733814"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
-            landmarkName = "createNewUserWith(userProfile:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PeopleNearBy/FirebaseAuthService.swift"
-            timestampString = "502256112.733814"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
-            landmarkName = "createNewUserWith(userProfile:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PeopleNearBy.FirebaseAuthService.(createNewUserWith (userProfile : PeopleNearBy.UserProfile) -&gt; ()).(closure #1)"
-                  moduleName = "PeopleNearBy"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yang/Dropbox/computer-science/810/recover/people-nearby-ios/PeopleNearBy/FirebaseAuthService.swift"
-                  timestampString = "503087329.528465"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "69"
-                  endingLineNumber = "69"
-                  offsetFromSymbolStart = "728">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PeopleNearBy.FirebaseAuthService.(createNewUserWith (userProfile : PeopleNearBy.UserProfile) -&gt; ()).(closure #1).(closure #1)"
-                  moduleName = "PeopleNearBy"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yang/Dropbox/computer-science/810/recover/people-nearby-ios/PeopleNearBy/FirebaseAuthService.swift"
-                  timestampString = "503087329.529686"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "71"
-                  endingLineNumber = "71"
-                  offsetFromSymbolStart = "28">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "PeopleNearBy/ContactsVC.swift"
             timestampString = "502406175.216445"
             startingColumnNumber = "9223372036854775807"
@@ -697,8 +617,8 @@
                   symbolName = "PeopleNearBy.ContactsVC.prepare (for : __ObjC.UIStoryboardSegue, sender : Swift.Optional&lt;Any&gt;) -&gt; ()"
                   moduleName = "PeopleNearBy"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yang/Dropbox/computer-science/810/recover/people-nearby-ios/PeopleNearBy/ContactsVC.swift"
-                  timestampString = "503087329.534387"
+                  urlString = "file:///Users/yang/Desktop/github810/people-nearby-ios/PeopleNearBy/ContactsVC.swift"
+                  timestampString = "503098322.970617"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "133"
@@ -712,8 +632,8 @@
                   symbolName = "PeopleNearBy.ContactsVC.prepare (for : __ObjC.UIStoryboardSegue, sender : Swift.Optional&lt;Any&gt;) -&gt; ()"
                   moduleName = "PeopleNearBy"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yang/Dropbox/computer-science/810/recover/people-nearby-ios/PeopleNearBy/ContactsVC.swift"
-                  timestampString = "503087329.535629"
+                  urlString = "file:///Users/yang/Desktop/github810/people-nearby-ios/PeopleNearBy/ContactsVC.swift"
+                  timestampString = "503098322.971864"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "133"
@@ -778,11 +698,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PeopleNearBy/MessageCenter.swift"
-            timestampString = "503087328.183465"
+            timestampString = "503097320.230757"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "260"
-            endingLineNumber = "260"
+            startingLineNumber = "288"
+            endingLineNumber = "288"
             landmarkName = "connect()"
             landmarkType = "7">
          </BreakpointContent>
@@ -794,11 +714,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PeopleNearBy/MessageCenter.swift"
-            timestampString = "503087328.183465"
+            timestampString = "503097320.230757"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "163"
-            endingLineNumber = "163"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
             landmarkName = "append(toContact:withNewMessage:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -810,11 +730,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PeopleNearBy/MessageCenter.swift"
-            timestampString = "503087328.183465"
+            timestampString = "503091104.119853"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
             landmarkName = "append(toContact:withNewMessage:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -826,11 +746,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PeopleNearBy/MessageCenter.swift"
-            timestampString = "503087328.183465"
+            timestampString = "503097320.230757"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "170"
-            endingLineNumber = "170"
+            startingLineNumber = "180"
+            endingLineNumber = "180"
             landmarkName = "append(newContact:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -890,11 +810,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PeopleNearBy/MessageCenter.swift"
-            timestampString = "503087328.183465"
+            timestampString = "503097320.230757"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "295"
-            endingLineNumber = "295"
+            startingLineNumber = "323"
+            endingLineNumber = "323"
             landmarkName = "attempToRetrieveData(fromUesr:)"
             landmarkType = "7">
             <Locations>
@@ -905,12 +825,12 @@
                   symbolName = "PeopleNearBy.MessageCenter.(attempToRetrieveData in _7FAE44A6450F4B4EA557943FDD8C8049) (fromUesr : Swift.String) -&gt; ()"
                   moduleName = "PeopleNearBy"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yang/Dropbox/computer-science/810/recover/people-nearby-ios/PeopleNearBy/MessageCenter.swift"
-                  timestampString = "503087329.561053"
+                  urlString = "file:///Users/yang/Desktop/github810/people-nearby-ios/PeopleNearBy/MessageCenter.swift"
+                  timestampString = "503098323.003182"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "295"
-                  endingLineNumber = "295"
+                  startingLineNumber = "323"
+                  endingLineNumber = "323"
                   offsetFromSymbolStart = "32">
                </Location>
                <Location
@@ -920,12 +840,12 @@
                   symbolName = "PeopleNearBy.MessageCenter.(attempToRetrieveData in _7FAE44A6450F4B4EA557943FDD8C8049) (fromUesr : Swift.String) -&gt; ()"
                   moduleName = "PeopleNearBy"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yang/Dropbox/computer-science/810/recover/people-nearby-ios/PeopleNearBy/MessageCenter.swift"
-                  timestampString = "503087329.562307"
+                  urlString = "file:///Users/yang/Desktop/github810/people-nearby-ios/PeopleNearBy/MessageCenter.swift"
+                  timestampString = "503098323.004487"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "295"
-                  endingLineNumber = "295"
+                  startingLineNumber = "323"
+                  endingLineNumber = "323"
                   offsetFromSymbolStart = "108">
                </Location>
             </Locations>
@@ -938,11 +858,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PeopleNearBy/MessageCenter.swift"
-            timestampString = "503087328.183465"
+            timestampString = "503097320.230757"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "300"
-            endingLineNumber = "300"
+            startingLineNumber = "328"
+            endingLineNumber = "328"
             landmarkName = "attempToRetrieveData(fromUesr:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -954,11 +874,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PeopleNearBy/MessageCenter.swift"
-            timestampString = "503087328.183465"
+            timestampString = "503097320.230757"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "310"
-            endingLineNumber = "310"
+            startingLineNumber = "338"
+            endingLineNumber = "338"
             landmarkName = "attempToRetrieveData(fromUesr:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -985,8 +905,8 @@
                   symbolName = "static PeopleNearBy.CoredataService.insert (withContactName : Swift.String, newMessage : Swift.Optional&lt;PeopleNearBy.Message&gt;) -&gt; ()"
                   moduleName = "PeopleNearBy"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yang/Dropbox/computer-science/810/recover/people-nearby-ios/PeopleNearBy/CoredataService.swift"
-                  timestampString = "503087329.569475"
+                  urlString = "file:///Users/yang/Desktop/github810/people-nearby-ios/PeopleNearBy/CoredataService.swift"
+                  timestampString = "503098323.01244"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "54"
@@ -1000,8 +920,8 @@
                   symbolName = "static PeopleNearBy.CoredataService.insert (withContactName : Swift.String, newMessage : Swift.Optional&lt;PeopleNearBy.Message&gt;) -&gt; ()"
                   moduleName = "PeopleNearBy"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yang/Dropbox/computer-science/810/recover/people-nearby-ios/PeopleNearBy/CoredataService.swift"
-                  timestampString = "503087329.570733"
+                  urlString = "file:///Users/yang/Desktop/github810/people-nearby-ios/PeopleNearBy/CoredataService.swift"
+                  timestampString = "503098323.01382"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "54"
@@ -1009,6 +929,294 @@
                   offsetFromSymbolStart = "1604">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PeopleNearBy/SignInVC.swift"
+            timestampString = "503097792.568218"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "onAuthSuccess(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PeopleNearBy/SignInVC.swift"
+            timestampString = "503097795.868032"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "onAuthSuccess(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PeopleNearBy/SignInVC.swift"
+            timestampString = "503097798.130465"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "onAuthSuccess(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PeopleNearBy/SignInVC.swift"
+            timestampString = "503097799.204828"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "onAuthSuccess(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PeopleNearBy.SignInVC.onAuthSuccess (__ObjC.NSNotification) -&gt; ()"
+                  moduleName = "PeopleNearBy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yang/Desktop/github810/people-nearby-ios/PeopleNearBy/SignInVC.swift"
+                  timestampString = "503098323.024479"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "1044">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PeopleNearBy.SignInVC.(onAuthSuccess (__ObjC.NSNotification) -&gt; ()).(closure #1)"
+                  moduleName = "PeopleNearBy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yang/Desktop/github810/people-nearby-ios/PeopleNearBy/SignInVC.swift"
+                  timestampString = "503098323.025718"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "28">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PeopleNearBy/FirebaseAuthService.swift"
+            timestampString = "503097806.134708"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "signInWith(email:password:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PeopleNearBy/FirebaseAuthService.swift"
+            timestampString = "503098250.766101"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "signInWith(email:password:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PeopleNearBy/FirebaseAuthService.swift"
+            timestampString = "503098259.858988"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "signInWith(email:password:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PeopleNearBy/FirebaseAuthService.swift"
+            timestampString = "503098262.064678"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "signInWith(email:password:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PeopleNearBy/FirebaseAuthService.swift"
+            timestampString = "503098263.423751"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "signInWith(email:password:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PeopleNearBy/MessageCenter.swift"
+            timestampString = "503098295.70561"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "296"
+            endingLineNumber = "296"
+            landmarkName = "atttempToRetrieveDataForCurrentUser(callback:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PeopleNearBy/MessageCenter.swift"
+            timestampString = "503098299.046784"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "301"
+            endingLineNumber = "301"
+            landmarkName = "atttempToRetrieveDataForCurrentUser(callback:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PeopleNearBy/MessageCenter.swift"
+            timestampString = "503098300.155742"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "307"
+            endingLineNumber = "307"
+            landmarkName = "atttempToRetrieveDataForCurrentUser(callback:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PeopleNearBy.MessageCenter.(atttempToRetrieveDataForCurrentUser in _7FAE44A6450F4B4EA557943FDD8C8049) (callback : () -&gt; ()) -&gt; ()"
+                  moduleName = "PeopleNearBy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yang/Desktop/github810/people-nearby-ios/PeopleNearBy/MessageCenter.swift"
+                  timestampString = "503098323.048426"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "308"
+                  endingLineNumber = "308"
+                  offsetFromSymbolStart = "640">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PeopleNearBy.MessageCenter.(atttempToRetrieveDataForCurrentUser in _7FAE44A6450F4B4EA557943FDD8C8049) (callback : () -&gt; ()) -&gt; ()"
+                  moduleName = "PeopleNearBy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yang/Desktop/github810/people-nearby-ios/PeopleNearBy/MessageCenter.swift"
+                  timestampString = "503098323.049905"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "308"
+                  endingLineNumber = "308"
+                  offsetFromSymbolStart = "688">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PeopleNearBy/MessageCenter.swift"
+            timestampString = "503098301.667302"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "315"
+            endingLineNumber = "315"
+            landmarkName = "atttempToRetrieveDataForCurrentUser(callback:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PeopleNearBy/MessageCenter.swift"
+            timestampString = "503098302.643246"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "318"
+            endingLineNumber = "318"
+            landmarkName = "atttempToRetrieveDataForCurrentUser(callback:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

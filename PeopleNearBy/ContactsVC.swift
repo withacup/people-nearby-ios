@@ -97,7 +97,7 @@ class ContactsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "ContactCell") as? ContactCell{
-            cell.configureCell(withContactName: self.contacts[indexPath.row].getContactName, andContactImg: UIImage(named: "dog")!)
+            cell.configureCell(withContactName: self.contacts[indexPath.row].getContactName, andContactImg: contacts[indexPath.row].getContactImg)
             
             return cell
         }

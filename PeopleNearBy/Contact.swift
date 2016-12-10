@@ -27,11 +27,16 @@ class Contact {
         }
     }
     
-    init(withContactName name: String, andMessages: [Message], contactImg: UIImage) {
+    init(withContactName name: String, andMessages: [Message], contactImg: UIImage?) {
         self._date = NSDate()
         self._contactName = name
         self._messageRec = andMessages
-        self._contactImg = contactImg
+        
+        if let contactImg = contactImg {
+            self._contactImg = contactImg
+        } else {
+            self._contactImg = UIImage(named: "dogs")
+        }
     }
     
     /// This append method will append current new Message into messageRe array.

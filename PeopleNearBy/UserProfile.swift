@@ -14,12 +14,22 @@ class UserProfile {
     private var _userPhotoUrl: URL!
     private var _userEmail: String!
     private var _userPass: String!
+    private var _userImg: UIImage!
     
-    init(withUserName userName: String, userPhotoUrl: URL, userEmail: String, userPass: String) {
+    init(withUserName userName: String, userPhotoUrl: URL, userEmail: String, userPass: String, userImg: UIImage?) {
         _userName = userName
         _userPass = userPass
         _userPhotoUrl = userPhotoUrl
         _userEmail = userEmail
+        if let img = userImg {
+            _userImg = img
+        } else {
+            _userImg = UIImage(named: "dog")
+        }
+    }
+    
+    public func setUserIcon(userIcon: UIImage) {
+        self._userImg = userIcon
     }
     
     var userName: String {
@@ -38,5 +48,7 @@ class UserProfile {
         return _userPass
     }
     
-    
+    var userImg: UIImage {
+        return _userImg
+    }    
 }
